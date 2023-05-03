@@ -69,3 +69,12 @@ console.log(result2);
 console.log(1000 / 0); // Infinity
 console.log(1000 / -0); // -Infinity
 console.log('test string' / 5); // NaN (Not a Number)
+
+console.log(10 + 10);
+
+// конкатенация строк
+console.log('string 1' + 'string 2'); 
+
+console.log('20' + 2);
+
+console.log('20' - 2);
