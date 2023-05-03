@@ -59,3 +59,13 @@ console.log(test2);
 // console.log(test2);
 
 console.log('some console log');
+
+let result1 = 1 + 3;
+console.log(result1);
+
+let result2 = 0.1 + 0.2;
+console.log(result2);
+
+console.log(1000 / 0); // Infinity
+console.log(1000 / -0); // -Infinity
+console.log('test string' / 5); // NaN (Not a Number)
