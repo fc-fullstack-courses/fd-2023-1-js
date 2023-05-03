@@ -2,15 +2,15 @@
   коментарий
 */
 // коментарий
-alert(150); // число
-alert(513n); // BigInt
-// строки
-alert('string 1');
-alert("string 2");
-alert(`string 3`);
-// boolean
-alert(true); 
-alert(false); 
+console.log(150); // число
+console.log(513n); // BigInt
+// // строки
+console.log('string 1');
+console.log("string 2");
+console.log(`string 3`);
+// // boolean
+console.log(true); 
+console.log(false); 
 
-alert(undefined);
-alert(null);
+console.log(undefined);
+console.log(null);
