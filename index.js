@@ -108,3 +108,21 @@ console.log(500 === '500'); // false
 
 console.log(100 !== 500); // true
 console.log(100 !== 100); // false
+
+// Присваивание
+let num1 = 50;
+
+// num1 = 15;
+// num1 = 5 + 10;
+
+// num1 = num1 + 10;
+num1 += 10;
+
+// num1++;
+// num1 += 1;
+// num1 = num1 + 1;
+
+/*
+num1 = num1 * 2;
+num1 *= 2;
+*/
