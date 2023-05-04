@@ -14,7 +14,7 @@
 
 // console.log(undefined);
 // console.log(null);
-
+501
 // обьявление переменной с названием box
 let box;
 
@@ -24,7 +24,7 @@ box = 10;
 // console.log(box);
 
 // инициализация переменной
-let box2 = 'test 12345';
+const box2 = 'test 12345';
 
 // console.log(box2);
 
