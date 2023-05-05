@@ -37,12 +37,9 @@
 // }
 
 // funcion expression (функциональное выражение)
-const getSumOfTwoNumbers = function () {
+const getSumOfTwoNumbers = function (num1, num2) {
   // тело функции
-  let number1 = +prompt('Enter number1');
-  let number2 = +prompt('Enter number2');
-
-  let result = number1 + number2;
+  let result = num1 + num2;
 
   const isNaNResult = isNaN(result);
 
