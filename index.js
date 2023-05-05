@@ -51,3 +51,18 @@ const getSumOfTwoNumbers = function (num1, num2) {
 };
 
 // let returningValue = getSumOfTwoNumbers();
+
+/*
+  создать функцию, которая будет делить первое число на второе
+*/
+const divide = function(num1, num2) {
+  let result = num1 / num2;
+
+  const isNaNResult = isNaN(result);
+
+  if (isNaNResult) {
+    return false;
+  } else {
+    return result;
+  }
+}
