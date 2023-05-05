@@ -19,20 +19,27 @@
 // let greetingText = 'Привет, ' + userInput;
 // console.log(greetingText);
 
-
 // let value = NaN;
 // alert(value !== value); 1
 // const isNaNAnswer = isNaN(value); 2
 
-let number1 = +prompt('Enter number1');
-let number2 = +prompt('Enter number2');
+// let number1 = +prompt('Enter number1');
+// let number2 = +prompt('Enter number2');
 
-let result = number1 + number2;
+// let result = number1 + number2;
 
-const isNaNResult = isNaN(result);
+// const isNaNResult = isNaN(result);
 
-if (isNaNResult) {
-  alert('Incorrect data. Please try again');
-} else {
-  alert(result);
-}
+// if (isNaNResult) {
+//   alert('Incorrect data. Please try again');
+// } else {
+//   alert(result);
+// }
+
+// funcion expression (функциональное выражение)
+const myFunction = function () {
+  // тело функции
+  console.log('тело функции');
+};
+
+myFunction();
