@@ -83,15 +83,15 @@ console.log(number > 0 || number < 50);
 
 // возвращает ПОСЛЕДНЕЕ ПРАВДИВОЕ значение
 // или ПЕРВОЕ ЛОЖНОЕ значение
-console.log ('test' && 8); // 8
-console.log (null && 8); // null
-console.log (null && NaN); // null
+console.log('test' && 8); // 8
+console.log(null && 8); // null
+console.log(null && NaN); // null
 
-// возвращает ПЕРВОЕ ПРАВДИВОЕ значение 
+// возвращает ПЕРВОЕ ПРАВДИВОЕ значение
 // или ПОСЛЕДНЕЕ ЛОЖНОЕ  значение
-console.log ('test' || 8); // 'test'
-console.log (null || 8); // 8
-console.log (null || NaN); // NaN
+console.log('test' || 8); // 'test'
+console.log(null || 8); // 8
+console.log(null || NaN); // NaN
 
 // console.log ('test' && 8 && null && true && 'sadsa')
 
@@ -99,8 +99,8 @@ console.log (null || NaN); // NaN
 console.log('=== Equality operators ===');
 console.log(500 === 500); // true
 console.log(500 === 50); // false
-console.log('text' === 'text') // true
-console.log('test' === 'text') // false
+console.log('text' === 'text'); // true
+console.log('test' === 'text'); // false
 
 // console.log(500 == 500); // true
 // console.log(500 == '500'); // true
@@ -110,13 +110,13 @@ console.log(100 !== 500); // true
 console.log(100 !== 100); // false
 
 // Присваивание
-let num1 = 50;
+// let num1 = 50;
 
 // num1 = 15;
 // num1 = 5 + 10;
 
 // num1 = num1 + 10;
-num1 += 10;
+// num1 += 10;
 
 // num1++;
 // num1 += 1;
@@ -126,3 +126,57 @@ num1 += 10;
 num1 = num1 * 2;
 num1 *= 2;
 */
+
+/*
+  создайте 2 переменные и выведите в консоль результат их умножения
+  создайте 2 переменные и выведите в консоль результат их деления
+  создайте 2 переменные и выведите в консоль результат возведения первого числа в степень второго
+
+  создайте небулевую переменную и выведите в консоль её значение, приведенное к булевому
+
+  создайте нечисловую переменную и выведите в консоль её числовое значение
+
+  создайте нестрочную переменную и выведите её строчное значение
+
+  Переделать следующий код с ипсользованием операторов присвоения
+
+  let num = 1;
+
+  num = num + 5;
+
+  num = num - 2;
+
+  num = num * 3;
+
+  num = num / 4;
+*/
+
+// создайте 2 переменные и выведите в консоль результат их умножения
+let num1 = 5;
+let num2 = 3;
+let result1 = num1 * num2;
+
+console.log(result1);
+
+//  создайте 2 переменные и выведите в консоль результат их деления
+console.log(num1 / num2);
+// создайте 2 переменные и выведите в консоль результат возведения первого числа в степень второго
+console.log(num1 ** num2);
+
+// создайте небулевую переменную и выведите в консоль её значение, приведенное к булевому
+
+let notBool = null;
+console.log(!!notBool);
+
+// создайте нечисловую переменную и выведите в консоль её числовое значение
+let notNumber = '34353';
+console.log(+notNumber);
+// создайте нестрочную переменную и выведите её строчное значение
+let notString = 23423543;
+console.log(notString + '');
+
+let num = 1;
+num += 5;
+num -= 2;
+num *= 3;
+num /= 4;
