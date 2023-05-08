@@ -95,7 +95,7 @@ const moreLess = function (num1, num2) {
 
 const res1 = moreLess(9, 9);
 
-console.log('число ' + res1 + ' больше');
+// console.log('число ' + res1 + ' больше');
 
 const isEven = function (num) {
   if (typeof num !== 'number' || num !== num) {
@@ -113,3 +113,34 @@ const isAdult = function (age) {
   }
   return age >= 18;
 };
+
+const result = 12345;
+// console.log(result);
+
+const testFunc = function () {
+  const result = true;
+  console.log(result);
+};
+
+
+// console.log(result);
+
+// var test = 'asdsafsa';
+// console.log(test);
+
+// const testFunc2 = function () {
+//   var test = 1233435;
+
+//   console.log(test);
+// };
+
+// testFunc2();
+
+// console.log(test);
+
+if (true) {
+  var test = 346546;
+  console.log(test);
+}
+
+console.log(test);
