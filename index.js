@@ -35,6 +35,10 @@ const userOrder = prompt(
 switch (userOrder) {
   // описываем случаи / значения которые принимает userOrder
   // и сравнивает их по строгому стравнению (===)
+  case 'Чай':
+  case 'чай':
+  case 'Tea':
+  case 'tea':
   case '1': {
     // код для случая userOrder === '1'
     alert('You have ordered tea');
