@@ -1,3 +1,4 @@
+debugger;
 let condition = NaN;
 let condition2 = false;
 
