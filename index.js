@@ -41,6 +41,7 @@ switch (userOrder) {
   case 'tea':
   case '1': {
     // код для случая userOrder === '1'
+    const amount = prompt('how meny');
     alert('You have ordered tea');
     // отключает падение дальше по кейсам
     break;
@@ -59,3 +60,18 @@ switch (userOrder) {
     alert('incorrect product number');
   }
 }
+
+/*
+  Создать простенький калькуляторы с использованием
+  if ... else
+  switch ... case
+
+  калькуляторы должны уметь 
+    сложить
+    вычесть
+    поделить
+    умножить
+  2 числа
+
+  * переделать решения на отдельные функции
+*/
