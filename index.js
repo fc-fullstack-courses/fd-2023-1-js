@@ -55,7 +55,7 @@ const getSumOfTwoNumbers = function (num1, num2) {
 /*
   создать функцию, которая будет делить первое число на второе
 */
-const divide = function(num1, num2) {
+const divide = function (num1, num2) {
   let result = num1 / num2;
 
   const isNaNResult = isNaN(result);
@@ -65,4 +65,51 @@ const divide = function(num1, num2) {
   } else {
     return result;
   }
-}
+};
+
+let testValue = null;
+
+/*
+  Создать функцию которая принимает два числа и находит наибольшее из них
+
+  Создать функцию которая будет говорить, является ли число четным или нет
+
+  Создать функцию которая принимает возраст пользователя и говорит, совершеннолетний он или нет
+*/
+
+const moreLess = function (num1, num2) {
+  if (
+    typeof num1 !== 'number' ||
+    typeof num2 !== 'number' ||
+    isNaN(num1 - num2)
+  ) {
+    return null;
+  }
+
+  if (num1 > num2) {
+    return num1;
+  } else {
+    return num2;
+  }
+};
+
+const res1 = moreLess(9, 9);
+
+console.log('число ' + res1 + ' больше');
+
+const isEven = function (num) {
+  if (typeof num !== 'number' || num !== num) {
+    return null;
+  }
+
+  return num % 2 === 0;
+};
+
+isEven('hghggh');
+
+const isAdult = function (age) {
+  if (typeof age !== 'number' || age !== age || age <= 0 || age > 110) {
+    return null;
+  }
+  return age >= 18;
+};
