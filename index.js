@@ -59,12 +59,26 @@
 // }
 
 // do ... while
-let counter = 0;
+// let counter = 0;
 
-do {
-  // тело цикла 
-  // гарантированно выполнится хотя бы 1 раз
+// do {
+//   // тело цикла
+//   // гарантированно выполнится хотя бы 1 раз
 
-  console.log(counter);
-  counter += 2;
-} while (counter <= 10);
+//   console.log(counter);
+//   counter += 2;
+// } while (counter <= 10);
+
+// for
+
+// for(start; condition; step) {
+// тело цикла
+// }
+// debugger;
+for (let i = 0; i <= 10; i+= 2) {
+  console.log(i);
+}
+
+// for(;;) {
+  
+// }
