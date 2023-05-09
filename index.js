@@ -47,13 +47,24 @@
 //   counter += 2;
 // }
 
+// let counter = 0;
+// while (counter <= 10) {
+//   if (counter % 2 !== 0) {
+//     counter++;
+//     continue; // досрочно остановить этот проход и начать новый
+//   }
+
+//   console.log(counter);
+//   counter++;
+// }
+
+// do ... while
 let counter = 0;
-while (counter <= 10) {
-  if (counter % 2 !== 0) {
-    counter++;
-    continue; // досрочно остановить этот проход и начать новый
-  }
+
+do {
+  // тело цикла 
+  // гарантированно выполнится хотя бы 1 раз
 
   console.log(counter);
-  counter++;
-}
+  counter += 2;
+} while (counter <= 10);
