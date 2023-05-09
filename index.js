@@ -41,8 +41,19 @@
 //   counter++;
 // }
 
+// let counter = 0;
+// while (counter <= 10) {
+//   console.log(counter);
+//   counter += 2;
+// }
+
 let counter = 0;
 while (counter <= 10) {
+  if (counter % 2 !== 0) {
+    counter++;
+    continue; // досрочно остановить этот проход и начать новый
+  }
+
   console.log(counter);
-  counter += 2;
+  counter++;
 }
