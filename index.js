@@ -30,10 +30,19 @@
 // }
 
 /*
-  С помощью консоль логов отобразите в консоли числа от 0 до 10
+  С помощью консоль логов отобразите в консоли
+  четные числа от 0 до 10
 */
+// let counter = 0;
+// while (counter <= 10) {
+//   if (counter % 2 === 0) {
+//     console.log(counter);
+//   }
+//   counter++;
+// }
+
 let counter = 0;
-while(counter <= 10) {
-  counter++;
+while (counter <= 10) {
   console.log(counter);
+  counter += 2;
 }
