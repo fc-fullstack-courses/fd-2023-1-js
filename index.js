@@ -14,11 +14,17 @@
 //   console.log('iteration');
 // }
 
-let counter = 0;
-while (true) {
-  counter++;
+// let counter = 0;
+// while (true) {
+//   counter++;
+//   console.log('iteration');
+//   if(counter >= 5) {
+//     break; // досрочная остановка цикла
+//   }
+// }
+
+let shouldContinue = true;
+while(shouldContinue) {
   console.log('iteration');
-  if(counter >= 5) {
-    break; // досрочная остановка цикла
-  }
+  shouldContinue = confirm('Should continue iterating?');
 }
