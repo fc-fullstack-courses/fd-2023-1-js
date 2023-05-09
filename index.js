@@ -23,8 +23,17 @@
 //   }
 // }
 
-let shouldContinue = true;
-while(shouldContinue) {
-  console.log('iteration');
-  shouldContinue = confirm('Should continue iterating?');
+// let shouldContinue = true;
+// while(shouldContinue) {
+//   console.log('iteration');
+//   shouldContinue = confirm('Should continue iterating?');
+// }
+
+/*
+  С помощью консоль логов отобразите в консоли числа от 0 до 10
+*/
+let counter = 0;
+while(counter <= 10) {
+  counter++;
+  console.log(counter);
 }
