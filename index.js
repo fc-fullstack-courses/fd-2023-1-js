@@ -55,3 +55,6 @@ cat.weight++;
 
 cat.furType = 'long'; // добавление новых свойст
 
+// Удаление свойств
+delete cat.isAngry;
+// cat.age = undefined;
