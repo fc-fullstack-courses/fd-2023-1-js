@@ -61,40 +61,40 @@
 //   }
 // }
 
-let a = 10;
-let b = 70;
+// let a = 10;
+// let b = 70;
 
-if (a > b) {
-  console.log(1);
-} else {
-  console.log(2);
-}
+// if (a > b) {
+//   console.log(1);
+// } else {
+//   console.log(2);
+// }
 
-// тернарный (условный) оператор
-a > b ? console.log(1) : console.log(2);
-console.log(a > b ? 1 : 2);
+// // тернарный (условный) оператор
+// a > b ? console.log(1) : console.log(2);
+// console.log(a > b ? 1 : 2);
 
-const getInput = function () {
-  const input = prompt();
+// const getInput = function () {
+//   const input = prompt();
 
-  // if (input) {
-  //   return input;
-  // } else {
-  //   return 'Nothing was entered';
-  // }
+// if (input) {
+//   return input;
+// } else {
+//   return 'Nothing was entered';
+// }
 
-  return input ? input : 'Nothing was entered';
-};
+//   return input ? input : 'Nothing was entered';
+// };
 
-let result;
+// let result;
 
-if (a > b) {
-  result = a;
-} else {
-  result = b;
-}
+// if (a > b) {
+//   result = a;
+// } else {
+//   result = b;
+// }
 
-let result1 = a > b ? a : b;
+// let result1 = a > b ? a : b;
 
 /*
   Создать простенький калькуляторы с использованием
@@ -110,3 +110,42 @@ let result1 = a > b ? a : b;
 
   * переделать решения на отдельные функции
 */
+
+// let a = 10;
+// let b = prompt();
+
+const calc = function (num1, num2, operator) {
+  if (
+    typeof num1 !== 'number' ||
+    typeof num2 !== 'number' ||
+    isNaN(num1 - num2)
+  ) {
+    return null;
+  }
+
+  switch (operator) {
+    case '+': {
+      return num1 + num2;
+      // break;
+    }
+
+    case '-': {
+      return num1 - num2;
+      // break;
+    }
+
+    case '*': {
+      return num1 * num2;
+      // break;
+    }
+
+    case '/': {
+      return num1 / num2;
+      // break;
+    }
+
+    default: {
+      return null;
+    }
+  }
+};
