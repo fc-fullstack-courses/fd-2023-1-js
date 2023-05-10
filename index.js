@@ -23,3 +23,16 @@ const car = {
   },
 };
 
+// Создание обьектов
+const obj1 = {}; // литеральное создание
+const obj2 = Object(); // редко
+const obj3 = new Object(); // редко
+
+const cat = {
+  nickname: 'Vas`ka',
+  color: 'gray',
+  age: 3,
+  weight: 5,
+  breed: 'British',
+  isAngry: false,
+};
