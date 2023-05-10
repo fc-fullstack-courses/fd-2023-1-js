@@ -11,10 +11,10 @@ const car = {
   model: 'Model XYT++',
   power: 430,
   isUsed: false,
-  dimensions : {
+  dimensions: {
     width: 3,
     height: 2,
-    lenght: 7
+    lenght: 7,
   },
   otherObject: object,
   drive: function () {
@@ -35,8 +35,12 @@ const cat = {
   weight: 5,
   breed: 'British',
   isAngry: false,
-  func1 : function () {},
-  func2 () {}
+  meow: function () {
+    return 'cat is meowing';
+  },
+  run() {
+    return 'cat is running';
+  },
 };
 
 // Чтение
@@ -49,7 +53,7 @@ console.log(cat);
 console.log(cat.age);
 // console.log(cat.asdsfdsf) // undefined
 
-// Изменение 
+// Изменение
 // обьект.свойствоОбьекта = новоеЗначение
 cat.weight = cat.weight + 1;
 cat.weight += 1;
@@ -60,3 +64,46 @@ cat.furType = 'long'; // добавление новых свойст
 // Удаление свойств
 delete cat.isAngry;
 // cat.age = undefined;
+
+// Конструкторы
+// const WildCat = function() {} // PascalCase
+
+/*
+
+const cat = {
+  nickname: 'Vas`ka',
+  color: 'gray',
+  age: 3,
+  weight: 5,
+  isMale: true,
+  breed: 'British',
+  meow: function () {
+    return 'cat is meowing';
+  },
+  run() {
+    return 'cat is running';
+  },
+};
+
+*/
+
+const Cat = function (nickname, color, age, weight, breed, isMale) {
+  // debugger;
+  this.nickname = nickname;
+  this.color = color;
+  this.age = age;
+  this.weight = weight;
+  this.breed = breed;
+  this.isMale = isMale;
+
+  this.meow = function () {
+    return 'cat is meowing';
+  }
+
+  this.run = function() {
+    return 'cat is running';
+  }
+};
+
+// const cat1 = new Cat('Anfisa', 'white', 2, 3.5, 'Siameese', false);
+const cat2 = new Cat('Anfisa', 'white', 2, 3.5, 'Siameese', false);
