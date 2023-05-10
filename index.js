@@ -35,6 +35,8 @@ const cat = {
   weight: 5,
   breed: 'British',
   isAngry: false,
+  func1 : function () {},
+  func2 () {}
 };
 
 // Чтение
