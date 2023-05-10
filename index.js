@@ -47,3 +47,11 @@ console.log(cat);
 console.log(cat.age);
 // console.log(cat.asdsfdsf) // undefined
 
+// Изменение 
+// обьект.свойствоОбьекта = новоеЗначение
+cat.weight = cat.weight + 1;
+cat.weight += 1;
+cat.weight++;
+
+cat.furType = 'long'; // добавление новых свойст
+
