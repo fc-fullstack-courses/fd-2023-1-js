@@ -36,3 +36,14 @@ const cat = {
   breed: 'British',
   isAngry: false,
 };
+
+// Чтение
+console.log(cat);
+// alert(cat); // приводит к строке которую он и показывает
+
+// обьект.свойствоОбьекта
+// cat.breed
+// cat.isAngry
+console.log(cat.age);
+// console.log(cat.asdsfdsf) // undefined
+
