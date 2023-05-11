@@ -75,9 +75,9 @@
 // тело цикла
 // }
 // debugger;
-for (let i = 0; i <= 10; i += 2) {
-  console.log(i);
-}
+// for (let i = 0; i <= 10; i += 2) {
+//   console.log(i);
+// }
 
 // for(;;) {
 
@@ -90,8 +90,64 @@ for (let i = 0; i <= 10; i += 2) {
 
   можете использовать любой вид циклов
   * напишите решения с использованием всех видов циклов
+  
+*/
+//WHILE:
+// let passValue = 'admin1234';
+// let pass;
+// while (pass !== passValue) {
+//   pass = prompt ('Your password');
 
-  создать функцию которая будет возводить число в положительную степень
+// }
+
+//DO...WHILE:
+// let passValue = 'admin1234';
+// do {
+//   let pass = prompt ('Your password');
+//   if (pass === passValue){
+//     alert ('welcome');
+//     break;
+//   }
+// } while(true);
+
+// FOR:
+// let passValue = 'admin1234';
+
+// for (;;){
+//   let pass = prompt ('Your password');
+
+//   if (pass === passValue){
+//   alert ('welcome');
+//   break;
+//   }
+// }
+
+/*
+создать функцию которая будет возводить число в положительную степень
   не использовать ** и Math.pow()
   * возводить число в любую степень
 */
+
+// let userNumberTemp = +prompt('Введите число:');
+// let userDegreeTemp = +prompt('Введите степень числа:');
+
+// let funDegree = function (userNumberTemp, userDegreeTemp) {
+//   //debugger;
+//   let result = 1;
+
+//   if (
+//     typeof userNumberTemp !== 'number' &&
+//     typeof userDegreeTemp !== 'number' &&
+//     isNaN(userNumberTemp * userDegreeTemp) &&
+//     userDegreeTemp <= 0
+//   ) {
+//     return null;
+//   }
+
+//   for (let i = 0; i < userDegreeTemp; i++) {
+//     result *= userNumberTemp;
+//   }
+//   return result;
+// };
+
+// console.log(funDegree(userNumberTemp, userDegreeTemp));
