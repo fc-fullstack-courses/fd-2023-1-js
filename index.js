@@ -137,3 +137,44 @@ let key = 'my secret key';
 obj[key] = 'but why?';
 
 // console['log']('but why X2 ?')
+
+/*
+  создать функцию, которая принимает число
+  и возвращает обьект
+  свойства в обьекте описывают таблицу умножения, где
+  ключ - 2 * 5 =
+  значение 10
+
+  таблица расчитывает от 1 до принятого параметра
+
+
+  createMultiplicationTable (5)
+    {
+      '1 * 1 =' : 1,
+      '1 * 2 =' : 2,
+      '1 * 3 =' : 3,
+
+
+
+
+
+
+      
+      // ...
+      '5 * 4 =' 20,
+      '5 * 5 =' 25
+    }
+*/
+
+const createMultiplicationTable = function (maxNumber) {
+  const table = {};
+
+  for (let i = 1; i <= maxNumber; i++) {
+    debugger;
+    for (let j = 1; j <= maxNumber; j++) {
+      table[`${i} * ${j} =`] = j * i;
+    }
+  }
+
+  return table;
+};
