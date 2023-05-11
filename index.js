@@ -117,3 +117,23 @@ const cat2 = new Cat('Anfisa', 'white', 2, 3.5, 'Siameese', false);
   пол
   *полное имя (имя и фамилия одновременно)
 */
+
+const obj = {
+  0: 'secret test',
+};
+
+// console.log(obj.0);
+// console.log(obj.'0');
+
+let index = 0;
+
+console.log(obj[0]);
+console.log(obj['0']);
+console.log(obj[50 - 50]);
+console.log(obj[index]);
+
+let key = 'my secret key';
+
+obj[key] = 'but why?';
+
+// console['log']('but why X2 ?')
