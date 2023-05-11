@@ -98,12 +98,22 @@ const Cat = function (nickname, color, age, weight, breed, isMale) {
 
   this.meow = function () {
     return 'cat is meowing';
-  }
+  };
 
-  this.run = function() {
+  this.run = function () {
     return 'cat is running';
-  }
+  };
 };
 
 // const cat1 = new Cat('Anfisa', 'white', 2, 3.5, 'Siameese', false);
 const cat2 = new Cat('Anfisa', 'white', 2, 3.5, 'Siameese', false);
+
+/*
+  Создайте функцию-конструктор для пользователя
+  у пользователя должны быть следующие свойства:
+  имя
+  фамилия
+  возраст
+  пол
+  *полное имя (имя и фамилия одновременно)
+*/
