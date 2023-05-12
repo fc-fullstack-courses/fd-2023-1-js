@@ -44,13 +44,13 @@ const cat = {
 };
 
 // Чтение
-console.log(cat);
+// console.log(cat);
 // alert(cat); // приводит к строке которую он и показывает
 
 // обьект.свойствоОбьекта
 // cat.breed
 // cat.isAngry
-console.log(cat.age);
+// console.log(cat.age);
 // console.log(cat.asdsfdsf) // undefined
 
 // Изменение
@@ -106,7 +106,7 @@ const Cat = function (nickname, color, age, weight, breed, isMale) {
 };
 
 // const cat1 = new Cat('Anfisa', 'white', 2, 3.5, 'Siameese', false);
-const cat2 = new Cat('Anfisa', 'white', 2, 3.5, 'Siameese', false);
+// const cat2 = new Cat('Anfisa', 'white', 2, 3.5, 'Siameese', false);
 
 /*
   Создайте функцию-конструктор для пользователя
@@ -125,13 +125,12 @@ const User = function (firstName, lastName, age, isMale) {
   this.age = age;
   this.isMale = isMale;
 
-
-  this.fullName = this.firstName +' '+ this.lastName;
+  this.fullName = this.firstName + ' ' + this.lastName;
 };
 
-const user1 = new User("Denis", "Ivanov", 20, true);
-const user2 = new User("Olya", "Denisyk", 50, false);
-const user3 = new User("Yehor", "Stepanov", 30, true);
+const user1 = new User('Denis', 'Ivanov', 20, true);
+const user2 = new User('Olya', 'Denisyk', 50, false);
+const user3 = new User('Yehor', 'Stepanov', 30, true);
 
 const obj = {
   0: 'secret test',
@@ -142,10 +141,10 @@ const obj = {
 
 let index = 0;
 
-console.log(obj[0]);
-console.log(obj['0']);
-console.log(obj[50 - 50]);
-console.log(obj[index]);
+// console.log(obj[0]);
+// console.log(obj['0']);
+// console.log(obj[50 - 50]);
+// console.log(obj[index]);
 
 let key = 'my secret key';
 
@@ -193,3 +192,22 @@ const createMultiplicationTable = function (maxNumber) {
 
   return table;
 };
+
+const test1 = 10;
+const test2 = 10;
+
+const cat1 = {
+  isMale: true,
+  age: 3,
+};
+
+const cat2 = {
+  isMale: true,
+  age: 3,
+};
+// одинаковая ячейка
+const cat3 = cat2;
+
+console.log(cat3 === cat2);
+
+cat3.age++;
