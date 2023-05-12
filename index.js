@@ -34,3 +34,12 @@ let currentLength = userEmails.push('new1@test.com', 'new2@test.com');
 
 // удаление элемента из конца массива
 const lastEmail = userEmails.pop();
+
+// добавление элементов в начало массива
+let currentLength2 = userEmails.unshift(
+  'iwillbedeleted@mail.com',
+  'unshifted1@test.com'
+);
+
+// удаление элемента из начала массива
+const firstEmail = userEmails.shift();
