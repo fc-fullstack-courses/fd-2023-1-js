@@ -122,7 +122,6 @@ const testFunc = function () {
   console.log(result);
 };
 
-
 // console.log(result);
 
 // var test = 'asdsafsa';
@@ -144,3 +143,22 @@ if (true) {
 }
 
 console.log(test);
+
+// funct();
+
+// function expression
+const funct = function () {};
+
+sum2();
+
+// function declaration
+function sum2(num1, num2) {
+  console.log('declaration');
+  return num1 + num2;
+}
+
+// function User () {
+//   this.age = 123;
+// }
+
+// const user = new User();
