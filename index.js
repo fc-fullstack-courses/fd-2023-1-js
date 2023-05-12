@@ -25,3 +25,12 @@ const userEmails = [
   'mail3@test.test',
   'mail4@test.test',
 ];
+
+// console.log(userEmails[3]);
+
+// добавление элементов в конец
+userEmails.push('test@test.test');
+let currentLength = userEmails.push('new1@test.com', 'new2@test.com');
+
+// удаление элемента из конца массива
+const lastEmail = userEmails.pop();
