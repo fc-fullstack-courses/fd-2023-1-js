@@ -43,3 +43,18 @@ let currentLength2 = userEmails.unshift(
 
 // удаление элемента из начала массива
 const firstEmail = userEmails.shift();
+
+// удалить все элементы начиная с указанного индекса
+// userEmails.splice(3);
+
+// удаляет все элементы начиная с 4 элемента с конца
+// userEmails.splice(-4);
+
+// удаленные элементы возвращаются в отдельном массиве
+// const deletedEmails = userEmails.splice(-4);
+
+// удаление опеределенного количества елементов
+userEmails.splice(1, 4);
+
+// добавление новых элементов
+userEmails.splice(1, 0, 'spliced1@test.test', 'spliced2@test.test');
