@@ -118,6 +118,21 @@ const cat2 = new Cat('Anfisa', 'white', 2, 3.5, 'Siameese', false);
   *полное имя (имя и фамилия одновременно)
 */
 
+const User = function (firstName, lastName, age, isMale) {
+  //debugger;
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
+  this.isMale = isMale;
+
+
+  this.fullName = this.firstName +' '+ this.lastName;
+};
+
+const user1 = new User("Denis", "Ivanov", 20, true);
+const user2 = new User("Olya", "Denisyk", 50, false);
+const user3 = new User("Yehor", "Stepanov", 30, true);
+
 const obj = {
   0: 'secret test',
 };
