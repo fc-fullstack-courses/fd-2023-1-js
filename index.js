@@ -206,8 +206,14 @@ const cat2 = {
   age: 3,
 };
 // одинаковая ячейка
+
+// console.log(cat3 === cat2);
+
 const cat3 = cat2;
-
-console.log(cat3 === cat2);
-
 cat3.age++;
+
+const mouse1 = {
+  nickname: 'Mickey'
+};
+
+const mouse2 = new Object({nickname: 'Mickey'});
