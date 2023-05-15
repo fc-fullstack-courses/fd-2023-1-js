@@ -93,3 +93,17 @@ const emailsString2 = userEmails.join('=-=');
 const unflattedArr = [100, 200, [300, 400, 500], 600, [700, [800, [900]]]];
 const flatted1 = unflattedArr.flat(2);
 const flatted2 = unflattedArr.flat(Infinity);
+
+// sort
+const unsortedArr = [5, -10, 3, 0, 13, 8, 10, 17];
+
+function sortFunc(nextValue, currentValue) {
+  debugger;
+  if (currentValue < nextValue) {
+    return -1; // nextValue ставят перед currentValue
+  } else {
+    return 1; // currentValue  ставят перед nextValue
+  }
+}
+
+unsortedArr.sort(sortFunc);
