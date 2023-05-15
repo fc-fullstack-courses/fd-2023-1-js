@@ -162,3 +162,20 @@ function sum2(num1, num2) {
 // }
 
 // const user = new User();
+
+// High Order Function (HOF)
+
+function saySomething(howToSay, whatToSay) {
+  howToSay(whatToSay);
+  // alert();
+}
+
+saySomething(alert, 'test phrase');
+saySomething(console.log, 'test phrase');
+
+// High Order Function (HOF)
+function highOrderFunction() {
+  const someFunc = function () {};
+
+  return someFunc;
+}
