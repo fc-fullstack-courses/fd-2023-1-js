@@ -58,3 +58,11 @@ userEmails.splice(1, 4);
 
 // добавление новых элементов
 userEmails.splice(1, 0, 'spliced1@test.test', 'spliced2@test.test');
+
+// Копирование части массива начиная с индекса до конца
+const vipEmails = userEmails.slice(3);
+const vipEmails2 = userEmails.slice(-2);
+
+// Копирование части массива начиная с индекса1 до индекса2
+const workerEmails = userEmails.slice(1, 3);
+const workerEmails2 = userEmails.slice(1, -2);
