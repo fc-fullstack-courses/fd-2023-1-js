@@ -121,7 +121,12 @@ console.log('======================');
 // }
 
 function multiplyBy2(number) {
-  console.log(number * 2);
+  const newNumber = number * 2;
+
+  return newNumber;
 }
 
-unsortedArr.forEach(multiplyBy2);
+// unsortedArr.forEach(multiplyBy2);
+
+const numbers2 = unsortedArr.map(multiplyBy2);
+
