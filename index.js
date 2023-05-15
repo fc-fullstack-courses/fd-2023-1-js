@@ -66,3 +66,8 @@ const vipEmails2 = userEmails.slice(-2);
 // Копирование части массива начиная с индекса1 до индекса2
 const workerEmails = userEmails.slice(1, 3);
 const workerEmails2 = userEmails.slice(1, -2);
+
+// скопируйте в новый массив первую половину старого
+userEmails.push('testmail@mail.com');
+const sliceSolution1 = userEmails.slice(0, 3);
+const sliceSolution2 = userEmails.slice(0, userEmails.length / 2);
