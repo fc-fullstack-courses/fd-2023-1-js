@@ -130,3 +130,14 @@ function multiplyBy2(number) {
 
 const numbers2 = unsortedArr.map(multiplyBy2);
 
+function isEven(number, index, arr) {
+  // if (number % 2 === 0) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+
+  return number % 2 === 0;
+}
+
+const evenNumbers = unsortedArr.filter(isEven);
