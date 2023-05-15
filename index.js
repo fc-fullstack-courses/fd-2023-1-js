@@ -88,3 +88,8 @@ concat2.reverse();
 // join
 const emailsString1 = userEmails.join();
 const emailsString2 = userEmails.join('=-=');
+
+// flat
+const unflattedArr = [100, 200, [300, 400, 500], 600, [700, [800, [900]]]];
+const flatted1 = unflattedArr.flat(2);
+const flatted2 = unflattedArr.flat(Infinity);
