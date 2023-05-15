@@ -81,3 +81,10 @@ const concat2 = userEmails.concat(emails2, '3@3.3', [700, [800, 900]]);
 // includes
 const includes1 = concat2.includes(215);
 const includes2 = concat2.includes(700);
+
+// reverse
+concat2.reverse();
+
+// join
+const emailsString1 = userEmails.join();
+const emailsString2 = userEmails.join('=-=');
