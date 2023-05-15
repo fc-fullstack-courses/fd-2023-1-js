@@ -77,3 +77,7 @@ const concat1 = userEmails.concat('1@1.1', '2@2.2');
 
 const emails2 = [100, 200, 300];
 const concat2 = userEmails.concat(emails2, '3@3.3', [700, [800, 900]]);
+
+// includes
+const includes1 = concat2.includes(215);
+const includes2 = concat2.includes(700);
