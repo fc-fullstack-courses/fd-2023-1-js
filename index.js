@@ -71,3 +71,9 @@ const workerEmails2 = userEmails.slice(1, -2);
 userEmails.push('testmail@mail.com');
 const sliceSolution1 = userEmails.slice(0, 3);
 const sliceSolution2 = userEmails.slice(0, userEmails.length / 2);
+
+// concat
+const concat1 = userEmails.concat('1@1.1', '2@2.2');
+
+const emails2 = [100, 200, 300];
+const concat2 = userEmails.concat(emails2, '3@3.3', [700, [800, 900]]);
