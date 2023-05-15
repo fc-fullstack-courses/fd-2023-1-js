@@ -98,7 +98,7 @@ const flatted2 = unflattedArr.flat(Infinity);
 const unsortedArr = [5, -10, 3, 0, 13, 8, 10, 17];
 
 function sortFunc(nextValue, currentValue) {
-  debugger;
+  // debugger;
   if (currentValue < nextValue) {
     return -1; // nextValue ставят перед currentValue
   } else {
@@ -107,3 +107,21 @@ function sortFunc(nextValue, currentValue) {
 }
 
 unsortedArr.sort(sortFunc);
+
+for (let i = 0; i < unsortedArr.length; i++) {
+  console.log(unsortedArr[i]);
+}
+
+console.log('======================');
+
+// function logArr(currentValue, index, array) {
+//   console.log(currentValue);
+//   console.log(index);
+//   console.log(array);
+// }
+
+function multiplyBy2(number) {
+  console.log(number * 2);
+}
+
+unsortedArr.forEach(multiplyBy2);
