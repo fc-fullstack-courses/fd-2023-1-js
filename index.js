@@ -212,11 +212,11 @@ const cat2 = {
 const cat3 = cat2;
 cat3.age++;
 
-const mouse1 = {
-  nickname: 'Mickey',
-};
+// const mouse1 = {
+//   nickname: 'Mickey',
+// };
 
-const mouse2 = new Object({ nickname: 'Mickey' });
+// const mouse2 = new Object({ nickname: 'Mickey' });
 
 function Phone(model, color, memory, price, hasNFC) {
   this.model = model;
@@ -236,7 +236,6 @@ const phone2 = new Phone('Test phone X', 'black', 128, 25999, false);
 const phones = [];
 
 for (let i = 0; i < 200000; i++) {
-
   const hasNFC = i % 2 === 0;
 
   const newPhone = new Phone(
@@ -249,3 +248,21 @@ for (let i = 0; i < 200000; i++) {
 
   phones.push(newPhone);
 }
+
+const mouse1 = {
+  nickname: 'Mickey',
+};
+
+const mouse2 = {
+  nickname: 'Mickey',
+};
+
+const mouseProto = {
+  eat: function (food) {
+    return `mouse eats ${food}`;
+  },
+};
+
+// встраивание прототипа для обьекта
+mouse1.__proto__ = mouseProto;
+mouse2.__proto__ = mouseProto;
