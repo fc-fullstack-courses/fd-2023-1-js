@@ -141,3 +141,15 @@ function isEven(number, index, arr) {
 }
 
 const evenNumbers = unsortedArr.filter(isEven);
+
+// some, every
+const isEvenNumberInArr = unsortedArr.some(isEven);
+
+function isLargeNumber (number) {
+  return number > 5000;
+}
+
+const isLargeNumberInArr = unsortedArr.some(isLargeNumber);
+
+const isEveryEven1 = unsortedArr.every(isEven);
+const isEveryEven2 = evenNumbers.every(isEven);
