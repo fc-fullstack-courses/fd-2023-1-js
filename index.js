@@ -225,10 +225,16 @@ function Phone(model, color, memory, price, hasNFC) {
   this.price = price;
   this.hasNFC = hasNFC;
 
-  this.call = function (who) {
-    return `You are calling ${who}`;
-  };
+  // this.__proto__ = phoneProto;
 }
+
+const phoneProto = {
+  call: function (who) {
+    return `You are calling ${who}`;
+  },
+};
+
+Phone.prototype = phoneProto;
 
 const phone1 = new Phone('Galaxy Note 530', 'white', 256, 49999, true);
 const phone2 = new Phone('Test phone X', 'black', 128, 25999, false);
