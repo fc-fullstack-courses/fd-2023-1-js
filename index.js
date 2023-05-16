@@ -242,6 +242,8 @@ const phone2 = new Phone('Test phone X', 'black', 128, 25999, false);
 const phones = [];
 
 for (let i = 0; i < 200000; i++) {
+
+  // debugger;
   const hasNFC = i % 2 === 0;
 
   const newPhone = new Phone(
@@ -260,15 +262,22 @@ const mouse1 = {
 };
 
 const mouse2 = {
-  nickname: 'Mickey',
+  nickname: 'Minni',
 };
 
 const mouseProto = {
-  eat: function (food) {
-    return `mouse eats ${food}`;
+  eat: function (food) { 
+    // debugger;
+    return `mouse ${this.nickname} eats ${food}`;
   },
 };
 
 // встраивание прототипа для обьекта
 mouse1.__proto__ = mouseProto;
 mouse2.__proto__ = mouseProto;
+
+// function test() {
+//   debugger;
+// }
+
+// test();
