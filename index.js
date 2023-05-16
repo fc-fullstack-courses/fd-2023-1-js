@@ -213,7 +213,39 @@ const cat3 = cat2;
 cat3.age++;
 
 const mouse1 = {
-  nickname: 'Mickey'
+  nickname: 'Mickey',
 };
 
-const mouse2 = new Object({nickname: 'Mickey'});
+const mouse2 = new Object({ nickname: 'Mickey' });
+
+function Phone(model, color, memory, price, hasNFC) {
+  this.model = model;
+  this.color = color;
+  this.memory = memory;
+  this.price = price;
+  this.hasNFC = hasNFC;
+
+  this.call = function (who) {
+    return `You are calling ${who}`;
+  };
+}
+
+const phone1 = new Phone('Galaxy Note 530', 'white', 256, 49999, true);
+const phone2 = new Phone('Test phone X', 'black', 128, 25999, false);
+
+const phones = [];
+
+for (let i = 0; i < 200000; i++) {
+
+  const hasNFC = i % 2 === 0;
+
+  const newPhone = new Phone(
+    `Random Phone ${i + 1}`,
+    `color ${i + 1}`,
+    128,
+    29999,
+    hasNFC
+  );
+
+  phones.push(newPhone);
+}
