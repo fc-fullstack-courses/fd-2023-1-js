@@ -242,7 +242,6 @@ const phone2 = new Phone('Test phone X', 'black', 128, 25999, false);
 const phones = [];
 
 for (let i = 0; i < 200000; i++) {
-
   // debugger;
   const hasNFC = i % 2 === 0;
 
@@ -266,7 +265,7 @@ const mouse2 = {
 };
 
 const mouseProto = {
-  eat: function (food) { 
+  eat: function (food) {
     // debugger;
     return `mouse ${this.nickname} eats ${food}`;
   },
@@ -281,3 +280,60 @@ mouse2.__proto__ = mouseProto;
 // }
 
 // test();
+
+/*
+  Создать функцию-конструктор Ladder
+  у лестниц должно быть свойство
+  currentStep - число, показывающее на какой ступеньке вы стоите
+
+  У лестниц должны быть следующие методы:
+  up() - поднимает на одну ступеньку 
+  down() - опускает на одну ступеньку
+  showStep() - возвращает ступеньку на которой вы находитесь
+
+  написать задачу с использованием прототипов
+
+  const ladder1 = new Ladder();
+  const ladder2 = new Ladder();
+
+  ladder1.up()
+  ladder1.up()
+  ladder1.showStep() -> 2
+  ladder.down()
+  ladder1.showStep() -> 1
+
+  ladder1.up === ladder2.up -> true
+*/
+
+function Ladder() {
+  this.currentStep = 0;
+}
+
+const ladderProto = {
+  up: function () {
+    this.currentStep++;
+  },
+
+  down: function () {
+    if(this.currentStep > 0) {
+      this.currentStep--;
+    }
+  },
+
+  showStep: function () {
+    return this.currentStep;
+  },
+};
+
+Ladder.prototype = ladderProto;
+
+const ladder1 = new Ladder();
+const ladder2 = new Ladder();
+
+ladder1.up()
+ladder1.up()
+ladder1.showStep() // -> 2
+ladder1.down()
+ladder1.showStep() // -> 1
+
+ladder1.up === ladder2.up // -> true
