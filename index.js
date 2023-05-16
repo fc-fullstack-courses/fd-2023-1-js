@@ -145,7 +145,7 @@ const evenNumbers = unsortedArr.filter(isEven);
 // some, every
 const isEvenNumberInArr = unsortedArr.some(isEven);
 
-function isLargeNumber (number) {
+function isLargeNumber(number) {
   return number > 5000;
 }
 
@@ -153,3 +153,17 @@ const isLargeNumberInArr = unsortedArr.some(isLargeNumber);
 
 const isEveryEven1 = unsortedArr.every(isEven);
 const isEveryEven2 = evenNumbers.every(isEven);
+
+// find
+const firstEvenNumber = unsortedArr.find(isEven);
+
+function isOdd(number) {
+  return number % 2 !== 0;
+}
+
+const firstOddNumber = evenNumbers.find(isOdd);
+
+const firstEvenNumberIndex = unsortedArr.findIndex(isEven);
+const firstOddNumberIndex = evenNumbers.findIndex(isOdd);
+
+const indexOf10 = unsortedArr.indexOf(10);
