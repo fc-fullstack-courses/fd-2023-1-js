@@ -16,8 +16,23 @@ function sum(num1, num2) {
   return num1 + num2;
 }
 
-console.log(1);
+try {
+  // опасный код
+  console.log(1);
 
-const result = sum(true, true);
-// throw 10;
-console.log(2);
+  const result = sum(false, 20);
+  // throw 10;
+  console.log(2);
+} catch (error) {
+  // выполняется в случае ошибки в try
+  console.log('Error happened');
+  console.log(error.message);
+
+  if(error.message = 'You must provide numbers') {
+    alert('Enter numbers next time')
+  }
+} finally {
+  // код выполняется после catch или
+  // после успешного выполнения всего try
+  console.log('finally');
+}
