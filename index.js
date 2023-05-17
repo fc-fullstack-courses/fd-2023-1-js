@@ -7,3 +7,14 @@
 // const num = new Number(500);
 
 // console.log(str);
+
+// const bool1 = new Boolean(false);
+
+const bool2 = Boolean(0);
+const bool3 = !!0;
+
+if (bool2) {
+  console.log('true');
+} else {
+  console.log('false');
+}
