@@ -28,3 +28,14 @@ function sum2(...numbers) {
 
   return result;
 }
+
+function multiply(...numbers) {
+  let result = 1;
+
+  numbers.forEach(function (number) {
+    result *= number;
+  });
+
+  return result;
+}
+
