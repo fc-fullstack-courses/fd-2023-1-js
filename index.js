@@ -47,7 +47,7 @@ const sliced = str2.slice(0, -5);
 const capsedStr = str.toUpperCase();
 const lowerStr = capsedStr.toLowerCase();
 
-const badStr = '                                    Anton              User                                                                                                 ';
+const badStr = '         Anton              User       ';
 
 const trimmed = badStr.trim();
 
@@ -57,3 +57,30 @@ const splitted1 = str.split();
 const splitted2 = str.split(' ');
 // массив символов
 const splitted3 = str.split('');
+
+function betterTrim(str) {
+  const words = str.split(' ');
+
+  const filteredWords = words.filter(function (word) {
+    return word !== '';
+  });
+
+  return filteredWords.join(' ');
+}
+
+function toRandomCase(str) {
+  let result = '';
+
+  // result = str;
+  for (let i = 0; i < str.length; i++) {
+    const currentLetter = str[i];
+
+    if (Math.random() > 0.5) {
+      result = result + currentLetter.toLowerCase();
+    } else {
+      result = result + currentLetter.toUpperCase();
+    }
+  }
+
+  return result;
+}
