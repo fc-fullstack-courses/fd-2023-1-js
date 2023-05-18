@@ -51,4 +51,9 @@ const badStr = '                                    Anton              User     
 
 const trimmed = badStr.trim();
 
-// const splitted = str.split();
+const splitted1 = str.split();
+
+// массив слов в строке
+const splitted2 = str.split(' ');
+// массив символов
+const splitted3 = str.split('');
