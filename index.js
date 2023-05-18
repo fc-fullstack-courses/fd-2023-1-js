@@ -84,3 +84,28 @@ function toRandomCase(str) {
 
   return result;
 }
+
+/*
+  написать функцию, которая будет принимать строчку
+  и считать количество гласных в ней
+  считать как символы в верхнем так и в нижнем регистре
+
+  'test string' -> 2
+  'Apple on the table' -> 6
+*/
+
+const vowels = ['a', 'o', 'u', 'e', 'i'];
+
+function countVowels(str, vowels) {
+  let result = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i].toLowerCase())) {
+      result++;
+    }
+  }
+
+  return result;
+}
+
+countVowels('Apple on the table', vowels);
