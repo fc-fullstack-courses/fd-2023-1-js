@@ -1,3 +1,4 @@
+'use strict';
 // console.log('dfdsfdsg');
 
 // alert('asdaff');
@@ -282,3 +283,106 @@ function greetUser2(user) {
 
   return `Hello, guest`;
 }
+
+// const testa213 = function() {}
+
+function sum1() {
+  // console.log(this);
+  // console.log(arguments); object
+}
+
+const arrowFunc = () => {
+  // console.log(this);
+  // console.log(arguments); Error
+};
+
+// arrow function
+// const arrowSum = (num1 = 2, num2 = 2) => {
+//   return num1 + num2;
+// };
+
+const arrowSum = (num1 = 2, num2 = 2) => num1 + num2;
+
+const arr = [1, 2, 3, 4, 5, 6];
+
+const oddNumbers = arr.filter((number) => number % 2 !== 0);
+
+// const User = (firstName) => {
+//   this.firstName= firstName;
+// }
+
+// const user = new User();
+
+const newspaper = {
+  title: 'Hot News',
+  articles: ['Top article', 'some boring stuff', 'who even reads this'],
+  articlePageNumbers: [1, 5, 7],
+  showArticles() {
+    const callback = function (article, index) {
+      console.log(this); // undefined
+      console.log(
+        `Article №${
+          index + 1
+        } has name ${article} starts on page {this.articlePageNumbers[index]}`
+      );
+    };
+
+    this.articles.forEach(callback);
+  },
+
+  showArticles1() {
+    const that = this;
+
+    const callback = function (article, index) {
+      // console.log(that);
+      console.log(
+        `Article №${index + 1} has name ${article} starts on page ${
+          that.articlePageNumbers[index]
+        }`
+      );
+    };
+
+    this.articles.forEach(callback);
+  },
+
+  showArticles2() {
+    const callback = function (article, index) {
+      console.log(this);
+      console.log(
+        `Article №${index + 1} has name ${article} starts on page ${
+          this.articlePageNumbers[index]
+        }`
+      );
+    };
+
+    const callbackWithThis = callback.bind(this);
+
+    this.articles.forEach(callbackWithThis);
+  },
+  showArticles3() {
+    const callback = (article, index) => {
+      console.log(this);
+      console.log(
+        `Article №${index + 1} has name ${article} starts on page ${
+          this.articlePageNumbers[index]
+        }`
+      );
+    };
+
+    this.articles.forEach(callback);
+  },
+  showArticles4() {
+    this.articles.forEach((article, index) => {
+      console.log(this);
+      console.log(
+        `Article №${index + 1} has name ${article} starts on page ${
+          this.articlePageNumbers[index]
+        }`
+      );
+    });
+  },
+
+  showArticles5 : () => {
+    this // Window
+  }
+};
