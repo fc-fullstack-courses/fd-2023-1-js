@@ -167,3 +167,18 @@ const firstEvenNumberIndex = unsortedArr.findIndex(isEven);
 const firstOddNumberIndex = evenNumbers.findIndex(isOdd);
 
 const indexOf10 = unsortedArr.indexOf(10);
+
+// reduce
+const numbers1 = [5, 10, 15, 20, 50, 100];
+
+// let result = 0;
+
+// numbers1.forEach((number) => {
+//   result += number;
+// });
+
+const result = numbers1.reduce((accumulator, number) => accumulator + number);
+/**
+ * @param {...number} numbers
+ */
+const sum = (...numbers) => numbers.reduce((acc, number) => acc + number);
