@@ -192,7 +192,91 @@ function multiply(num1, num2) {
   return num1 * num2;
 }
 
+/**
+ * Функция возводит число в квадрат
+ * @param {number} num - число которое будут возводить в квадрат
+ */
 function square(num) {
+  if (typeof num !== 'number' || isNaN(num)) {
+    throw new TypeError('You must provide valid number');
+  }
+
   const result = multiply(num, num);
   return result;
+}
+
+/**
+ * @param {object} user - обьект пользователя
+ * @param {string} user.firstName - имя пользователя
+ * @param {string} user.lastName - фамилия пользователя
+ */
+function greetUser(user) {
+  return `Hello, ${user.firstName} ${user.lastName}`;
+}
+
+
+// v1
+//  * @param {number[]} numbers массив чисел
+// v2
+// @param {Array<number>} numbers
+/**
+  * @param {Array<number>} numbers
+ */
+function calculateEven(numbers) {
+  let evenNumbers = 0;
+
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      evenNumbers++;
+    }
+  }
+
+  return evenNumbers;
+}
+
+/**
+ * @param  {...number} numbers 
+ */
+function calculateEven2(...numbers) {
+  let evenNumbers = 0;
+
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      evenNumbers++;
+    }
+  }
+
+  return evenNumbers;
+}
+
+/**
+ * 
+ * @param {(string | number)} data число или строка
+ */
+function printData (data) {
+  return data;
+}
+
+/*
+  v1
+  @param {object} [user] - опциональный обьект пользователя
+
+  v2
+  @param {object=} user - опциональный обьект пользователя
+*/
+
+/**
+ * @param {object} [user] - опциональный обьект пользователя
+ * @param {string} user.firstName - имя пользователя
+ * @param {string} user.lastName - фамилия пользователя
+ * @returns {string} строка, которая здоровается с пользователем или гостем
+ */
+function greetUser2(user) {
+  if(user) {
+    return `Hello, ${user.firstName} ${user.lastName}`;
+  }
+
+  return `Hello, guest`;
 }
