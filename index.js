@@ -187,8 +187,13 @@ let x = 1;
 
 //   return num1 + num2 + x;
 // }
-
-function multiply(num1, num2) {
+/**
+ *
+ * @param {number} [num1=10]
+ * @param {number} [num2=5]
+ * @returns
+ */
+function multiply(num1 = 10, num2 = 5) {
   return num1 * num2;
 }
 
@@ -214,18 +219,16 @@ function greetUser(user) {
   return `Hello, ${user.firstName} ${user.lastName}`;
 }
 
-
 // v1
 //  * @param {number[]} numbers массив чисел
 // v2
 // @param {Array<number>} numbers
 /**
-  * @param {Array<number>} numbers
+ * @param {Array<number>} numbers
  */
 function calculateEven(numbers) {
   let evenNumbers = 0;
 
-
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] % 2 === 0) {
       evenNumbers++;
@@ -236,12 +239,11 @@ function calculateEven(numbers) {
 }
 
 /**
- * @param  {...number} numbers 
+ * @param  {...number} numbers
  */
 function calculateEven2(...numbers) {
   let evenNumbers = 0;
 
-
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] % 2 === 0) {
       evenNumbers++;
@@ -252,10 +254,10 @@ function calculateEven2(...numbers) {
 }
 
 /**
- * 
+ *
  * @param {(string | number)} data число или строка
  */
-function printData (data) {
+function printData(data) {
   return data;
 }
 
@@ -274,7 +276,7 @@ function printData (data) {
  * @returns {string} строка, которая здоровается с пользователем или гостем
  */
 function greetUser2(user) {
-  if(user) {
+  if (user) {
     return `Hello, ${user.firstName} ${user.lastName}`;
   }
 
