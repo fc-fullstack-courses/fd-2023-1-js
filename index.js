@@ -170,7 +170,7 @@ function saySomething(howToSay, whatToSay) {
   // alert();
 }
 
-saySomething(alert, 'test phrase');
+// saySomething(alert, 'test phrase');
 saySomething(console.log, 'test phrase');
 
 // High Order Function (HOF)
@@ -178,4 +178,21 @@ function highOrderFunction() {
   const someFunc = function () {};
 
   return someFunc;
+}
+
+let x = 1;
+
+// function sum(num1, num2) {
+//   x++;
+
+//   return num1 + num2 + x;
+// }
+
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+
+function square(num) {
+  const result = multiply(num, num);
+  return result;
 }
