@@ -1,20 +1,23 @@
 'use strict';
 
-class UserClass {
-  constructor(login, password, age) {
+class User {
+  constructor(login, password, age, firstName, lastName) {
     this.login = login;
     this.password = password;
     this.age = age;
+    this.firstName = firstName;
+    this.lastName = lastName;
   }
 
   isAdult() {
     return this.age >= 18;
   }
 
-  test() {
-    return 'test method';
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
   }
+
+  id = 0;
 }
 
-const betterUser1 = new UserClass('testlogin1234', '12345admin', 12);
-const betterUser2 = new UserClass('oldUser', 'admin12345', 25);
+const user1 = new User('login1', 'pass1', 19);
