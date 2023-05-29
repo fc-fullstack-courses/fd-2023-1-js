@@ -35,15 +35,47 @@ const user1 = new User('login1', 'pass1', 19);
 
 class Worker {
   constructor(firstName, lastName, daysWorked, paymentRate) {
+    if (typeof daysWorked !== 'number' || isNaN(daysWorked)) {
+      throw new TypeError('Days must be number');
+    }
+
+    if (daysWorked < 0) {
+      throw new RangeError('Days cant be negative number');
+    }
+
     this.firstName = firstName;
     this.lastName = lastName;
-    this.daysWorked = daysWorked;
+    this._daysWorked = daysWorked;
     this.paymentRate = paymentRate;
   }
 
-  getPayment () {
-    return this.daysWorked * this.paymentRate;
+  set daysWorked (newDaysWorked) {
+    if (typeof newDaysWorked !== 'number' || isNaN(newDaysWorked)) {
+      throw new TypeError('Days must be number');
+    }
+
+    if (newDaysWorked < 0) {
+      throw new RangeError('Days cant be negative number');
+    }
+
+    this._daysWorked = newDaysWorked;
   }
+  
+  get daysWorked () {
+    return this._daysWorked;
+  }
+
+  get magicProperty () {
+    return 5*5;
+  }
+
+
+  getPayment() {
+    return this._daysWorked * this.paymentRate;
+  }
+
+
 }
 
-const worker1 = new Worker('Test', 'Testenko', 5, 100);
+const worker1 = new Worker('Test', 'Testenko', 0, 100);
+worker1.daysWorked = -5;
