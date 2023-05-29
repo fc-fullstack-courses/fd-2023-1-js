@@ -35,17 +35,9 @@ const user1 = new User('login1', 'pass1', 19);
 
 class Worker {
   constructor(firstName, lastName, daysWorked, paymentRate) {
-    if (typeof daysWorked !== 'number' || isNaN(daysWorked)) {
-      throw new TypeError('Days must be number');
-    }
-
-    if (daysWorked < 0) {
-      throw new RangeError('Days cant be negative number');
-    }
-
     this.firstName = firstName;
     this.lastName = lastName;
-    this._daysWorked = daysWorked;
+    this.daysWorked = daysWorked;
     this.paymentRate = paymentRate;
   }
 
@@ -71,7 +63,7 @@ class Worker {
 
 
   getPayment() {
-    return this._daysWorked * this.paymentRate;
+    return this.daysWorked * this.paymentRate;
   }
 
 
