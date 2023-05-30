@@ -7,6 +7,7 @@ class User {
     this.age = age;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.isBanned = false;
   }
 
   isAdult() {
@@ -44,6 +45,10 @@ class User {
     console.log(`message ${message} created new`);
   }
 
+  static isUser(obj) {
+    return obj instanceof User;
+  }
+
   id = 0;
 }
 
@@ -53,7 +58,7 @@ const user2 = new User('login2', 'pass2', 'name2', 'last2', 27);
 class Moderator extends User {
   constructor(login, password, age, firstName, lastName, permissions) {
     // обязательно вызывать первым делом в конструкторе наследумого класса
-    super(login, password,  firstName, lastName, age); // ссылка на конструктор родительского класса (User)
+    super(login, password, firstName, lastName, age); // ссылка на конструктор родительского класса (User)
 
     this.permissions = permissions;
   }
@@ -71,6 +76,36 @@ const moder1 = new Moderator(
   'Moderovich',
   ['delete']
 );
+
+/*
+Создайте класс Moderator и унаследуйте функционал User
+
+Создайте класс Admin, унаследуйте их от Модеров
+  Админы умеють банить пользователей
+    * у пользователей должно быть булевое свойство
+      которое показывае забанены ли они. При бане
+      пользователя свойство меняется
+*/
+
+class Admin extends Moderator {
+  constructor(login, password, age, firstName, lastName, permissions) {
+    super(login, password, age, firstName, lastName, permissions);
+  }
+
+  ban(user) {
+    if (User.isUser(user)) {
+      console.log(`User ${user.login} is banned`);
+      user.isBanned = true;
+    } else {
+      throw new TypeError('Invalid user');
+    }
+  }
+}
+
+const admin1 = new Admin('admin', 'admin12345', 55, 'Tiran', 'Tiranovich', [
+  'anything',
+]);
+
 class Worker {
   // обьявление приватного свойства экземпляров класса (обьектов)
   #paymentRate;
