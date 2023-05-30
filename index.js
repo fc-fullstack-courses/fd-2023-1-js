@@ -117,7 +117,7 @@ class Worker {
   }
 
   static isWorker (obj) {
-    return 'test';
+    return obj instanceof Worker;
   }
 
   static secret = 'test';
