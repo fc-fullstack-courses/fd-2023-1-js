@@ -1,7 +1,7 @@
 'use strict';
 
 class User {
-  constructor(login, password, age, firstName, lastName) {
+  constructor(login, password, firstName, lastName, age) {
     this.login = login;
     this.password = password;
     this.age = age;
@@ -40,30 +40,37 @@ class User {
     this._lastName = namesArr[1];
   }
 
+  createMessage(message) {
+    console.log(`message ${message} created new`);
+  }
+
   id = 0;
 }
 
-/*
-  Добавить классу User геттеры и сеттеры для
-    имени
-    фамилии
+const user1 = new User('login1', 'pass1', 'name', 'last', 19);
+const user2 = new User('login2', 'pass2', 'name2', 'last2', 27);
 
-  добавить геттер для полного имени
-*/
+class Moderator extends User {
+  constructor(login, password, age, firstName, lastName, permissions) {
+    // обязательно вызывать первым делом в конструкторе наследумого класса
+    super(login, password,  firstName, lastName, age); // ссылка на конструктор родительского класса (User)
 
-const user1 = new User('login1', 'pass1', 19, 'name', 'last');
+    this.permissions = permissions;
+  }
 
-/*
-  создать класс Worker
-  у сотрудников есть
-    имя
-    фамилия
-    ежедневная ставка
-    колисчество отработанных дней
+  deleteMessage(message) {
+    console.log(`message ${message} deleted`);
+  }
+}
 
-  у сотрудников есть метод, который будет возвращать размер зарплаты, которую необходимо оплатить за пройденное время
-*/
-
+const moder1 = new Moderator(
+  'moder1234',
+  'moder12345',
+  42,
+  'Moder',
+  'Moderovich',
+  ['delete']
+);
 class Worker {
   // обьявление приватного свойства экземпляров класса (обьектов)
   #paymentRate;
@@ -116,7 +123,7 @@ class Worker {
     return this.daysWorked * this.#paymentRate;
   }
 
-  static isWorker (obj) {
+  static isWorker(obj) {
     return obj instanceof Worker;
   }
 
