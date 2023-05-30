@@ -115,7 +115,17 @@ class Worker {
   getPayment() {
     return this.daysWorked * this.#paymentRate;
   }
+
+  static isWorker (obj) {
+    return 'test';
+  }
+
+  static secret = 'test';
 }
+
+// Worker.isWorker = (obj) => {
+//   return 'test';
+// };
 
 const worker1 = new Worker('Test', 'Testenko', 0, 100);
 // worker1.daysWorked = -5;
