@@ -13,12 +13,12 @@ class User {
     return this.age >= 18;
   }
 
-  get firstName () {
+  get firstName() {
     return this._firstName;
   }
 
-  set firstName (newName) {
-    if(typeof newName !== 'string') {
+  set firstName(newName) {
+    if (typeof newName !== 'string') {
       throw new TypeError('Name must be string');
     }
 
@@ -29,8 +29,8 @@ class User {
     return `${this.firstName} ${this.lastName}`;
   }
 
-  set fullName (fullNameString) {
-    if(typeof fullNameString !== 'string') {
+  set fullName(fullNameString) {
+    if (typeof fullNameString !== 'string') {
       throw new TypeError('Name must be string');
     }
 
@@ -65,14 +65,34 @@ const user1 = new User('login1', 'pass1', 19, 'name', 'last');
 */
 
 class Worker {
+  // обьявление приватного свойства экземпляров класса (обьектов)
+  #paymentRate;
+
   constructor(firstName, lastName, daysWorked, paymentRate) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.daysWorked = daysWorked;
     this.paymentRate = paymentRate;
+    // this.#sadsadsada= 10;
   }
 
-  set daysWorked (newDaysWorked) {
+  get paymentRate() {
+    return this.#paymentRate;
+  }
+
+  set paymentRate(newRate) {
+    if (typeof newRate !== 'number' || isNaN(newRate)) {
+      throw new TypeError();
+    }
+
+    if (newRate < 0) {
+      throw new RangeError();
+    }
+
+    this.#paymentRate = newRate;
+  }
+
+  set daysWorked(newDaysWorked) {
     if (typeof newDaysWorked !== 'number' || isNaN(newDaysWorked)) {
       throw new TypeError('Days must be number');
     }
@@ -83,22 +103,20 @@ class Worker {
 
     this._daysWorked = newDaysWorked;
   }
-  
-  get daysWorked () {
+
+  get daysWorked() {
     return this._daysWorked;
   }
 
-  get magicProperty () {
-    return 5*5;
+  get magicProperty() {
+    return 5 * 5;
   }
-
 
   getPayment() {
-    return this.daysWorked * this.paymentRate;
+    return this.daysWorked * this.#paymentRate;
   }
-
-
 }
 
 const worker1 = new Worker('Test', 'Testenko', 0, 100);
-worker1.daysWorked = -5;
+// worker1.daysWorked = -5;
+// console.log(worker1.#paymentRate)
