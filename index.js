@@ -13,14 +13,45 @@ class User {
     return this.age >= 18;
   }
 
-  getFullName() {
+  get firstName () {
+    return this._firstName;
+  }
+
+  set firstName (newName) {
+    if(typeof newName !== 'string') {
+      throw new TypeError('Name must be string');
+    }
+
+    this._firstName = newName;
+  }
+
+  get fullName() {
     return `${this.firstName} ${this.lastName}`;
+  }
+
+  set fullName (fullNameString) {
+    if(typeof fullNameString !== 'string') {
+      throw new TypeError('Name must be string');
+    }
+
+    const namesArr = fullNameString.split(' ');
+
+    this._firstName = namesArr[0];
+    this._lastName = namesArr[1];
   }
 
   id = 0;
 }
 
-const user1 = new User('login1', 'pass1', 19);
+/*
+  Добавить классу User геттеры и сеттеры для
+    имени
+    фамилии
+
+  добавить геттер для полного имени
+*/
+
+const user1 = new User('login1', 'pass1', 19, 'name', 'last');
 
 /*
   создать класс Worker
