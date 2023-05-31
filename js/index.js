@@ -172,3 +172,42 @@ class Worker {
 const worker1 = new Worker('Test', 'Testenko', 0, 100);
 // worker1.daysWorked = -5;
 // console.log(worker1.#paymentRate)
+
+
+class Phone {
+  #connectToProvider;
+  #battery;
+  constructor (name, battery, cpu, memory) {
+
+  }
+
+  get battery () {
+    return this.#battery;
+  }
+
+  set battery (newAmount) {
+
+    this.#battery = newAmount;
+  }
+
+  /**
+   * 
+   * @param {number | string} phoneNumber номер телефона по которому будут звонить
+   */
+  call (phoneNumber) {
+    // тут код связанный с звонком
+    // #connectToProvider();
+  }
+
+  /**
+   * связывазвает телефон с оператором
+   */
+  #connectToProvider () {
+
+  }
+
+}
+
+const phone1 = new Phone();
+
+phone1.call(354687646456);
