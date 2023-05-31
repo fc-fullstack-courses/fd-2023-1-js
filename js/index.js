@@ -218,7 +218,7 @@ class Figure {
 const figure1 = new Figure('some figure');
 
 class Square extends Figure {
-  constructor( a) {
+  constructor(a) {
     super('square');
 
     this.a = a;
@@ -236,12 +236,12 @@ const square3 = new Square(500);
 /**
  * @param {Figure} figure
  */
-function getFigureArea (figure) {
-  if(figure instanceof Figure) {
+function getFigureArea(figure) {
+  if (figure instanceof Figure) {
     return figure.getArea();
   }
 
-  throw new TypeError('You must give proper figure')
+  throw new TypeError('You must give proper figure');
 }
 
 // function test(a){
@@ -250,3 +250,81 @@ function getFigureArea (figure) {
 // }
 // function test(a, b,c) {
 // }
+
+/*
+  Создать класс Animal и унаследовать от него несколько других классов животных (коты, змеи, попугаи ....)
+    у животных должны быть:
+      клички
+      свойство, характеризующее голод
+
+    каждое животное должно уметь 
+      двигатся
+      есть
+      "говорить"
+
+    учесть что коты и попугаи едят разные вещи и по разному звучат
+
+*/
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+    this.isHungry = false;
+  }
+
+  move() {
+    console.log(`Animal ${this.name} is moving`);
+  }
+
+  eat() {
+    // console.log(`Animal ${this.name} is eating food`);
+    this.isHungry = false;
+  }
+
+  speak() {
+    console.log(`Animal ${this.name} making noices`);
+  }
+}
+
+class Cat extends Animal {
+  constructor(name) {
+    super(name);
+  }
+
+  move() {
+    console.log(`Cat ${this.name} is running. Poor vase`);
+  }
+
+  eat() {
+    console.log(`Cat ${this.name} is eating mice`);
+    super.eat(); // вызывает eat класса Animal
+  }
+
+  speak() {
+    console(`Cat ${this.name} is meowing`);
+  }
+}
+
+const cat1 = new Cat('Vas`ka');
+cat1.isHungry = true;
+console.log(cat1);
+
+cat1.eat();
+console.log(cat1);
+
+
+
+class Dog extends Animal {
+  constructor (name) {
+    super(name);
+  }
+
+  move() {
+    console.log(`...`);
+  }
+
+  eat() {
+
+    this.isHungry = false;
+  }
+}
