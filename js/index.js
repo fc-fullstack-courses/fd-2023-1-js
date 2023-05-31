@@ -173,28 +173,24 @@ const worker1 = new Worker('Test', 'Testenko', 0, 100);
 // worker1.daysWorked = -5;
 // console.log(worker1.#paymentRate)
 
-
 class Phone {
-  #connectToProvider;
+  // #connectToProvider;
   #battery;
-  constructor (name, battery, cpu, memory) {
+  constructor(name, battery, cpu, memory) {}
 
-  }
-
-  get battery () {
+  get battery() {
     return this.#battery;
   }
 
-  set battery (newAmount) {
-
+  set battery(newAmount) {
     this.#battery = newAmount;
   }
 
   /**
-   * 
+   *
    * @param {number | string} phoneNumber номер телефона по которому будут звонить
    */
-  call (phoneNumber) {
+  call(phoneNumber) {
     // тут код связанный с звонком
     // #connectToProvider();
   }
@@ -202,12 +198,55 @@ class Phone {
   /**
    * связывазвает телефон с оператором
    */
-  #connectToProvider () {
-
-  }
-
+  #connectToProvider() {}
 }
 
 const phone1 = new Phone();
 
 phone1.call(354687646456);
+
+class Figure {
+  constructor(name) {
+    this.name = name;
+  }
+
+  getArea() {
+    // находим площадь
+  }
+}
+
+const figure1 = new Figure('some figure');
+
+class Square extends Figure {
+  constructor( a) {
+    super('square');
+
+    this.a = a;
+  }
+
+  getArea() {
+    return this.a * this.a;
+  }
+}
+
+const square1 = new Square(5);
+const square2 = new Square(10);
+const square3 = new Square(500);
+
+/**
+ * @param {Figure} figure
+ */
+function getFigureArea (figure) {
+  if(figure instanceof Figure) {
+    return figure.getArea();
+  }
+
+  throw new TypeError('You must give proper figure')
+}
+
+// function test(a){
+// }
+// function test(a, b) {
+// }
+// function test(a, b,c) {
+// }
