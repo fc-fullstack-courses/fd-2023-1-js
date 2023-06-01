@@ -35,3 +35,15 @@ let res2 = 3 ** 4;
 // O(1) - константая
 const arr = [2, 7, null, true, 'test', 500000];
 arr[1];
+
+// O(n)  - линейная
+function linearSearch(arr, value) {
+
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i] === value) {
+      return i;
+    }
+  }
+
+  return -1;
+}
