@@ -47,3 +47,24 @@ function linearSearch(arr, value) {
 
   return -1;
 }
+
+// O(n^2) - квадратичная
+/*
+  1 * 2 = 2
+  1 * 3 = 3
+  ...
+  2 * 1 = 2
+  3 * 1 = 3
+*/
+function createMultiplicationTable (maxNumber) {
+  const table = {};
+
+  for(let i = 1; i <= maxNumber; i++){
+
+    for(let j = 1; j <= maxNumber; j++) {
+      table[`${i} * ${j} = `] = i * j;
+    }
+  }
+
+  return table;
+}
