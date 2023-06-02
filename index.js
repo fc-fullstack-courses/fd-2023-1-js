@@ -38,9 +38,8 @@ arr[1];
 
 // O(n)  - линейная
 function linearSearch(arr, value) {
-
   for (let i = 0; i < arr.length; i++) {
-    if(arr[i] === value) {
+    if (arr[i] === value) {
       return i;
     }
   }
@@ -55,16 +54,55 @@ function linearSearch(arr, value) {
   ...
   2 * 1 = 2
   3 * 1 = 3
+
+  n**2 = n * n = 10 * 10
 */
-function createMultiplicationTable (maxNumber) {
+function createMultiplicationTable(maxNumber) {
   const table = {};
 
-  for(let i = 1; i <= maxNumber; i++){
-
-    for(let j = 1; j <= maxNumber; j++) {
+  for (let i = 1; i <= maxNumber; i++) {
+    for (let j = 1; j <= maxNumber; j++) {
       table[`${i} * ${j} = `] = i * j;
     }
   }
 
   return table;
+}
+
+// O(log n) - логарифмическая
+const sortedNumers = [-14, 0, 2, 15, 53, 123, 830, 1357];
+/**
+ *
+ * @param {number[]} arr
+ * @param {number} value
+ */
+function binarySearch(arr, value) {
+  let startIndex = 0;
+  let endIndex = arr.length - 1;
+
+  let centerIndex = Math.round((startIndex + endIndex) / 2);
+
+  // debugger;
+
+  while (true) {
+    if (arr[centerIndex] === value) {
+      return centerIndex;
+    }
+
+    if(startIndex === centerIndex && endIndex === centerIndex) {
+      return -1;
+    }
+
+    if (arr[centerIndex] < value) {
+      startIndex = centerIndex;
+      centerIndex = Math.ceil((startIndex + endIndex) / 2);
+      continue;
+    }
+
+    if (arr[centerIndex] > value) {
+      endIndex = centerIndex;
+      centerIndex = Math.floor((startIndex + endIndex) / 2);
+      continue;
+    }
+  }
 }
