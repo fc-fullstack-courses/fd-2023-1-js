@@ -1,8 +1,14 @@
 'use strict';
 
 class MyArray {
-  constructor() {
+  constructor(...elements) {
     this.length = 0;
+
+    // for(let i = 0; i < elements.length; i++) {
+    //   this.push(elements[i]);
+    // }
+
+    this.push(...elements);
   }
 
   push(...elements) {
@@ -39,9 +45,9 @@ class MyArray {
       return undefined;
     }
 
-    const deletedElem = this[this.length -1];
+    const deletedElem = this[this.length - 1];
 
-    delete this[this.length -1];
+    delete this[this.length - 1];
 
     this.length--;
 
@@ -49,21 +55,25 @@ class MyArray {
   }
 }
 
-const arr = [40, 53, 46];
-const myArr = new MyArray();
+const arr = new Array(40, 53, 46);
+const myArr = new MyArray(40, 53, 46);
 
-myArr.push(40, 53, 46);
+// myArr.push(40, 53, 46);
 
-const arrDeleted1 = arr.pop();
-const arrDeleted2 = arr.pop();
+// const arrDeleted1 = arr.pop();
+// const arrDeleted2 = arr.pop();
 
-console.log(arrDeleted1);
-console.log(arrDeleted2);
-console.log(arr);
+// console.log(arrDeleted1);
+// console.log(arrDeleted2);
+// console.log(arr);
 
-const myArrDeleted1 = myArr.pop();
-const myArrDeleted2 = myArr.pop();
+// const myArrDeleted1 = myArr.pop();
+// const myArrDeleted2 = myArr.pop();
 
-console.log(myArrDeleted1);
-console.log(myArrDeleted2);
-console.log(myArr);
+// console.log(myArrDeleted1);
+// console.log(myArrDeleted2);
+// console.log(myArr);
+
+const arr1 = [1, 3, 5];
+const arr2 = [2, 4, 6];
+const arr3 = [...arr1, ...arr2];
