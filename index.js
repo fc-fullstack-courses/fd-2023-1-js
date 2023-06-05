@@ -54,3 +54,21 @@ const user = {
 };
 
 const { password, email, ...restOfUser } = user;
+
+const arr = [10, 15, 20, 25, 30];
+
+// const first = arr[0];
+
+// const [first, second, third] = arr;
+const [first, , , , third] = arr;
+
+const [, ...newArr] = arr;
+
+let a = 'value A';
+let b = 'value B';
+
+// // let temp = b;
+// // b = a;
+// // a = temp;
+
+[ b, a ] = [a, b];
