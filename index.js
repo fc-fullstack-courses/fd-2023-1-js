@@ -33,7 +33,7 @@ const {
   sizes: {
     width: { value: phoneWidth, unit },
   },
-  sizes
+  sizes,
 } = monitor;
 
 // BAD
@@ -44,3 +44,13 @@ const {
 // const { value } = monitor.sizes.width;
 
 console.log(monitorPrice);
+
+const user = {
+  login: 'testLogin',
+  password: '12345damin',
+  email: 'mail@test.test',
+  age: 12,
+  isMale: true,
+};
+
+const { password, email, ...restOfUser } = user;
