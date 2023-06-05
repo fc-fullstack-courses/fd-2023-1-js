@@ -53,6 +53,20 @@ class MyArray {
 
     return deletedElem;
   }
+
+  [Symbol.iterator]() {
+    let i = 0;
+    const arrayContext = this;
+
+    return {
+      next: function () {
+        return {
+          done: i >= arrayContext.length,
+          value: arrayContext[i++],
+        };
+      },
+    };
+  }
 }
 
 const arr = new Array(40, 53, 46);
@@ -77,3 +91,15 @@ const myArr = new MyArray(40, 53, 46);
 const arr1 = [1, 3, 5];
 const arr2 = [2, 4, 6];
 const arr3 = [...arr1, ...arr2];
+
+// for (let number of arr3) {
+//   console.log(number);
+// }
+
+// for (let i = 0; i < arr3.length; i++) {
+//   console.log(arr3[i]);
+// }
+
+for (let elem of myArr) {
+  console.log(elem);
+}
