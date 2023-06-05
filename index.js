@@ -27,6 +27,20 @@ const monitor = {
 
 // const price = 5000;
 
-const { price: monitorPrice, model, sizes } = monitor;
+const {
+  price: monitorPrice,
+  model,
+  sizes: {
+    width: { value: phoneWidth, unit },
+  },
+  sizes
+} = monitor;
+
+// BAD
+// const { width } = sizes;
+// const { unit, value } = width;
+
+// BAD but better
+// const { value } = monitor.sizes.width;
 
 console.log(monitorPrice);
