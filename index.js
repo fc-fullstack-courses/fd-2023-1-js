@@ -128,7 +128,45 @@ map.forEach((value, key, map) => {
 });
 
 set.forEach((value, key, map) => {
-  console.log(value);
-  console.log(key); // key === value
-  console.log(map);
+  // console.log(value);
+  // console.log(key); // key === value
+  // console.log(map);
 });
+
+const mapIterKeys = map.keys();
+const mapIterValues = map.values();
+const mapIterEntries = map.entries();
+
+// for (const key of mapIterKeys) {
+//   console.log(key);
+// }
+
+// for (const value of mapIterValues) {
+//   console.log(value);
+// }
+
+// for (const entry of mapIterEntries) {
+//   console.log(entry);
+// }
+
+// for (const [key, value] of map.entries()) {
+//   // const [key, value] = entry;
+//   console.log(key);
+//   console.log(value);
+// }
+
+// for (const test of map) {
+//   console.log(test);
+// }
+
+// for (const value of set.values()) {
+//   console.log(value);
+// }
+
+// for (const key of set.keys()) {
+//   console.log(key); //  === value
+// }
+
+// for (const entry of set.entries()) {
+//   console.log(entry);
+// }
