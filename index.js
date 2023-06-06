@@ -26,3 +26,36 @@ const value1 = map.get('10');
 const value2 = map.get(null);
 
 const isElemInMap = map.has('some key');
+
+const vocabulary = new Map();
+
+vocabulary.set('I','я');
+vocabulary.set('cat','кіт');
+vocabulary.set('have','мати');
+vocabulary.set('like','подобатися');
+vocabulary.set('fish', 'риба');
+vocabulary.set('pet','улюбленець');
+vocabulary.set('vase', 'ваза');
+vocabulary.set('green', 'зелений');
+
+const untraslatedString = 'I like cat I have green vase';
+
+/**
+ * 
+ * @param {string} str 
+ * @param {Map<string, string>} vocab
+ * @returns {string} переведенная строка
+ */
+function translate (str, vocab) {
+  let translatedStr = '';
+
+  const words = str.split(' ');
+
+  for(const word of words) {
+    const translatedWord = vocab.get(word);
+
+    translatedStr += `${translatedWord} `;
+  }
+
+  return translatedStr.trim();
+}
