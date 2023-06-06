@@ -71,4 +71,13 @@ let b = 'value B';
 // // b = a;
 // // a = temp;
 
-[ b, a ] = [a, b];
+[b, a] = [a, b];
+
+function getMonitorDiagonal({
+  sizes: {
+    width: { value: width },
+    height: { value: height },
+  },
+}) {
+  return Math.sqrt(width ** 2 + height ** 2);
+}
