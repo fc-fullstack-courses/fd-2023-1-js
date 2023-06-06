@@ -170,3 +170,12 @@ const mapIterEntries = map.entries();
 // for (const entry of set.entries()) {
 //   console.log(entry);
 // }
+
+const user = {
+  email: 'test@test',
+  age: 12,
+};
+
+const userKeys = Object.keys(user);
+const userValues = Object.values(user);
+const userEntries = Object.entries(user);
