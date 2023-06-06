@@ -29,29 +29,29 @@ const isElemInMap = map.has('some key');
 
 const vocabulary = new Map();
 
-vocabulary.set('I','я');
-vocabulary.set('cat','кіт');
-vocabulary.set('have','мати');
-vocabulary.set('like','подобатися');
+vocabulary.set('I', 'я');
+vocabulary.set('cat', 'кіт');
+vocabulary.set('have', 'мати');
+vocabulary.set('like', 'подобатися');
 vocabulary.set('fish', 'риба');
-vocabulary.set('pet','улюбленець');
+vocabulary.set('pet', 'улюбленець');
 vocabulary.set('vase', 'ваза');
 vocabulary.set('green', 'зелений');
 
-const untraslatedString = 'I like cat I have green vase';
+const untraslatedString = 'I like cat I have green dragon vase dolphin';
 
 /**
- * 
- * @param {string} str 
+ *
+ * @param {string} str
  * @param {Map<string, string>} vocab
  * @returns {string} переведенная строка
  */
-function translate (str, vocab) {
+function translate(str, vocab) {
   let translatedStr = '';
 
   const words = str.split(' ');
 
-  for(const word of words) {
+  for (const word of words) {
     const translatedWord = vocab.get(word);
 
     translatedStr += `${translatedWord} `;
@@ -59,3 +59,15 @@ function translate (str, vocab) {
 
   return translatedStr.trim();
 }
+
+/**
+ *
+ * @param {string} str
+ * @param {Map<string, string>} vocab
+ * @returns {string} переведенная строка
+ */
+const translate2 = (str, vocab) =>
+  str
+    .split(' ')
+    .map((word) => (vocab.has(word) ? vocab.get(word) : word))
+    .join(' ');
