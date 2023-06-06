@@ -71,3 +71,21 @@ const translate2 = (str, vocab) =>
     .split(' ')
     .map((word) => (vocab.has(word) ? vocab.get(word) : word))
     .join(' ');
+
+
+// Set
+const set = new Set();
+const set2 = new Set([10,20,30,40,40]);
+
+set.add(10);
+set.add(15);
+set.add('asdsadsad');
+
+// set.add([10]);
+// set.add([10]);
+
+set.delete(15);
+// set.clear();
+
+const isValueInSet = set.has(100);
+
