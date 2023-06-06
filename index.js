@@ -120,3 +120,15 @@ const arr2 = ['Test4', 'Test5', 'Test'];
 // }
 
 const uniqueNames = [...new Set([...arr1, ...arr2])];
+
+map.forEach((value, key, map) => {
+  // console.log(value);
+  // console.log(key);
+  // console.log(map);
+});
+
+set.forEach((value, key, map) => {
+  console.log(value);
+  console.log(key); // key === value
+  console.log(map);
+});
