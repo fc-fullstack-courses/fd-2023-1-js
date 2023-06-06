@@ -72,10 +72,9 @@ const translate2 = (str, vocab) =>
     .map((word) => (vocab.has(word) ? vocab.get(word) : word))
     .join(' ');
 
-
 // Set
 const set = new Set();
-const set2 = new Set([10,20,30,40,40]);
+const set2 = new Set([10, 20, 30, 40, 40]);
 
 set.add(10);
 set.add(15);
@@ -89,3 +88,35 @@ set.delete(15);
 
 const isValueInSet = set.has(100);
 
+/*
+  дано 2 массива с именами 
+  с помощью сета получите набор уникальных имен
+  (имена в исходных массивах будут повторятся)
+
+  * все уникальные имена отправить в третий массив
+*/
+
+const arr1 = ['Test', 'Test2', 'Test3'];
+const arr2 = ['Test4', 'Test5', 'Test'];
+
+// const uniqueNameSet = new Set();
+
+// for(let i = 0; i < arr1.length; i++) {
+//   uniqueNameSet.add(arr1[i]);
+// }
+
+// for(let i = 0; i < arr2.length; i++) {
+//   uniqueNameSet.add(arr2[i]);
+// }
+
+// const uniqueNameSet = new Set(arr1.concat(arr2));
+
+// const uniqueNameSet = new Set([...arr1, ...arr2]);
+
+// const uniqueNames = [];
+
+// for (const value of uniqueNameSet) {
+//   uniqueNames.push(value);
+// }
+
+const uniqueNames = [...new Set([...arr1, ...arr2])];
