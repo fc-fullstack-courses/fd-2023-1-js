@@ -104,3 +104,25 @@ function reduceTree(treeObj) {
 
   return result;
 }
+
+/*
+  написать рекурсивную функцию которая будет находить
+  факториал числа
+
+  5! = 1 * 2 * 3 * 4 * 5 = 120
+  3! = 1 * 2 * 3 = 6
+*/
+
+function getFactorial(number) {
+  if (number < 0) {
+    throw new RangeError('Number must not be negative');
+  }
+
+  if (number === 0 || number === 1) {
+    return 1;
+  }
+
+  if (number > 1) {
+    return number * getFactorial(number - 1);
+  }
+}
