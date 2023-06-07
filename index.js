@@ -64,3 +64,43 @@ function logRange(min, max) {
     2. доходим до базы рекурсии
     3. все остальные функции завершают работу
 */
+
+const tree = {
+  value: 10,
+  left: {
+    value: 5,
+    left: {
+      value: 3,
+    },
+  },
+  right: {
+    value: 2,
+    left: {
+      value: 3,
+    },
+    right: {
+      value: 1,
+      right: {
+        value: 1,
+      },
+    },
+  },
+};
+
+/**
+ *  @param {object} treeObj
+ *  @returns {number}
+ * */
+function reduceTree(treeObj) {
+  let result = treeObj.value;
+
+  if (treeObj.left) {
+    result += reduceTree(treeObj.left);
+  }
+
+  if (treeObj.right) {
+    result += reduceTree(treeObj.right);
+  }
+
+  return result;
+}
