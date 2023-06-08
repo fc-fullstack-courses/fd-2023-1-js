@@ -29,3 +29,39 @@ function log2() {
 }
 
 // console.log(value2);
+
+function wrapper() {
+  debugger;
+  // переменная в замыкании
+  let value = 'data';
+
+  console.log(`wrapper: ${value}`);
+
+  function inner() {
+    console.log(`inner: ${value}`);
+  }
+
+  inner();
+}
+
+// let i = 0;
+
+// function counter () {
+
+//   i++;
+//   return i;
+// }
+
+function createCounter() {
+  let i = 0;
+
+  function increment() {
+    // i++;
+    // return i;
+    return ++i;
+  }
+
+  return increment;
+}
+
+const counter = createCounter();
