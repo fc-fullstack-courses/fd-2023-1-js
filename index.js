@@ -67,8 +67,32 @@ function createCounter() {
 
   return {
     increment: increment,
-    decrement
-  }
+    decrement,
+  };
 }
 
-const counter = createCounter();
+const counter1 = createCounter();
+const counter2 = createCounter();
+
+/*
+  создать функцию createAdder, эта функция принимает число x
+  и возвращает другую функцию. 
+  Возвращаемая функция принимает
+  число y и возвращает результат его сложения с х 
+
+  const adder = createAdder(5);
+  adder(10); // 15
+  adder(20) // 35
+  adder(5) // 40
+  adder(100) // 140
+*/
+
+// function createAdder(x) {
+//   let result = x;
+
+//   return function (y) {
+//     return (result += y);
+//   };
+// }
+
+const createAdder = (x) => (y) => (x += y);
