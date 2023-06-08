@@ -96,3 +96,40 @@ const counter2 = createCounter();
 // }
 
 const createAdder = (x) => (y) => (x += y);
+
+// connect
+// connect(func1, func2)(Component)
+
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+const res1 = sum(5, 10, 3);
+
+function curriedSum(a) {
+  function func1(b) {
+    function func2(c) {
+      return a + b + c;
+    }
+
+    return func2;
+  }
+
+  return func1;
+}
+
+function curriedSum2(a) {
+  return function (b) {
+    return function (c) {
+      return a + b + c;
+    };
+  };
+}
+
+const curriedSum3 = (a) => (b) => (c) => a + b + c;
+
+const sumWithFive = curriedSum(5);
+const sumWithFiveAndTen = sumWithFive(10);
+const res2 = sumWithFiveAndTen(3);
+
+const res3 = curriedSum(5)(10)(3);
