@@ -133,3 +133,40 @@ const sumWithFiveAndTen = sumWithFive(10);
 const res2 = sumWithFiveAndTen(3);
 
 const res3 = curriedSum(5)(10)(3);
+
+/**
+ *
+ * @param {number} price
+ * @param {number} amount
+ * @param {number} discount
+ * @returns {number}
+ */
+function calculatePrice(price, discount, amount) {
+  return price * amount - price * amount * discount;
+}
+
+// 0.2 === 20%
+const totalPrice1 = calculatePrice(100, 0.2, 10);
+const totalPrice2 = calculatePrice(100, 0.2, 3);
+
+
+function curriedCalculatePrice(price) {
+  return function (discount) {
+    return function (amount) {
+      return price * amount - price * amount * discount;
+    };
+  };
+}
+
+const withPrice100 = curriedCalculatePrice(100);
+const withPrice100AndDiscount20 = withPrice100(0.2);
+
+const curriedTotal1 = withPrice100AndDiscount20(10);
+const curriedTotal2 = withPrice100AndDiscount20(3);
+
+const total3 = withPrice100AndDiscount20(50);
+
+const withPrice5000 = curriedCalculatePrice(5000);
+const withPrice5000AndDiscount7 = withPrice5000(0.07);
+
+const total4 = withPrice5000AndDiscount7(4);
