@@ -61,7 +61,14 @@ function createCounter() {
     return ++i;
   }
 
-  return increment;
+  function decrement() {
+    return --i;
+  }
+
+  return {
+    increment: increment,
+    decrement
+  }
 }
 
 const counter = createCounter();
