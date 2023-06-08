@@ -126,3 +126,28 @@ function getFactorial(number) {
     return number * getFactorial(number - 1);
   }
 }
+
+/*
+  создать рекурсивную функцию, которая будет принимать число
+    и возвращать строчку в которой будет указанное число количество скобочек
+    в виде
+
+    1 ==>  '()'
+    3 ==>  '((()))'
+    7 ==>  '((((((()))))))'
+*/
+
+function bracket(number) {
+  if (number < 0 || isNaN(number)) {
+    throw new RangeError('Number must greater than zero and not equal to NaN!');
+  }
+
+  if (number === 0) {
+    return '';
+  }
+  return `(${bracket(number - 1)})`;
+}
+
+console.log(bracket(7));
+
+const brackets2 = (number) => number > 1? `(${brackets2(number - 1)})` : '()';
