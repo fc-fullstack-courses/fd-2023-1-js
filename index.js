@@ -43,3 +43,18 @@ const incrementCounter = createCounter();
 
 // firstButton.addEventListener('click', incrementCounter);
 firstButton.addEventListener('click', createCounter());
+
+/*
+document.getElementsByTagName
+document.getElementById
+document.getElementsByClassName
+document.querySelector
+document.querySelectorAll
+*/
+
+const par1 = document.getElementById('par');
+const [par2] = document.getElementsByClassName('text');
+
+// const par3 = document.querySelector('body > section > article > p');
+const par3 = document.querySelector('p#par.text');
+const paragraphs = document.querySelectorAll('p');
