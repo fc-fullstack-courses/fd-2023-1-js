@@ -23,10 +23,23 @@ const [firstButton] = document.getElementsByTagName('button');
 
 */
 
-let counter = 0;
+// let counter = 0;
 
-function incrementCounter() {
-  alert(++counter);
+// function incrementCounter() {
+//   alert(++counter);
+// }
+
+function createCounter() {
+  let counter = 0;
+
+  return function () {
+    alert(++counter);
+  };
 }
 
-firstButton.addEventListener('click', incrementCounter);
+const incrementCounter = createCounter();
+
+// firstButton.addEventListener('click', incrementCounter());
+
+// firstButton.addEventListener('click', incrementCounter);
+firstButton.addEventListener('click', createCounter());
