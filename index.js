@@ -58,3 +58,8 @@ const [par2] = document.getElementsByClassName('text');
 // const par3 = document.querySelector('body > section > article > p');
 const par3 = document.querySelector('p#par.text');
 const paragraphs = document.querySelectorAll('p');
+
+const elem1 = document.querySelector('.article > h1');
+const elem2 = document.querySelector('.article + p');
+// const elem3 = document.querySelector('main > div > img');
+const elem3 = document.querySelector('img[alt="GET THIS"]');
