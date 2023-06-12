@@ -94,12 +94,24 @@ const btnHandler = (eventObj) => {
   console.groupEnd();
 };
 
-firstButton.addEventListener('click', btnHandler);
-rootDiv.addEventListener('click', btnHandler);
-document.body.addEventListener('click', btnHandler); // body
-document.documentElement.addEventListener('click', btnHandler); // html
-window.addEventListener('click', btnHandler);
+// firstButton.addEventListener('click', btnHandler);
+// rootDiv.addEventListener('click', btnHandler);
+// document.body.addEventListener('click', btnHandler); // body
+// document.documentElement.addEventListener('click', btnHandler); // html
+// window.addEventListener('click', btnHandler);
 
 // const clickEvent = new MouseEvent('click');
 
 // firstButton.dispatchEvent(clickEvent);
+
+/*
+  1. Создать кнопку. При нажатии на эту кнопку отображать
+  в коносли / алерте её текстовое содержимое 
+
+
+*/
+
+firstButton.addEventListener('click', (event) => {
+  // console.log(firstButton.textContent);
+  console.log(event.target.textContent);
+});
