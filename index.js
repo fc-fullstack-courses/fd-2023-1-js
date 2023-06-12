@@ -87,3 +87,7 @@ firstButton.addEventListener(
   },
   { once: true }
 );
+
+const clickEvent = new MouseEvent('click');
+
+firstButton.dispatchEvent(clickEvent);
