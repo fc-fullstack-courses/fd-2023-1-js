@@ -29,20 +29,20 @@ const [firstButton] = document.getElementsByTagName('button');
 //   alert(++counter);
 // }
 
-function createCounter() {
-  let counter = 0;
+// function createCounter() {
+//   let counter = 0;
 
-  return function () {
-    alert(++counter);
-  };
-}
+//   return function () {
+//     alert(++counter);
+//   };
+// }
 
-const incrementCounter = createCounter();
+// const incrementCounter = createCounter();
 
-// firstButton.addEventListener('click', incrementCounter());
+// // firstButton.addEventListener('click', incrementCounter());
 
-// firstButton.addEventListener('click', incrementCounter);
-firstButton.addEventListener('click', createCounter());
+// // firstButton.addEventListener('click', incrementCounter);
+// firstButton.addEventListener('click', createCounter());
 
 /*
 document.getElementsByTagName
@@ -52,14 +52,22 @@ document.querySelector
 document.querySelectorAll
 */
 
-const par1 = document.getElementById('par');
-const [par2] = document.getElementsByClassName('text');
+// const par1 = document.getElementById('par');
+// const [par2] = document.getElementsByClassName('text');
 
-// const par3 = document.querySelector('body > section > article > p');
-const par3 = document.querySelector('p#par.text');
-const paragraphs = document.querySelectorAll('p');
+// // const par3 = document.querySelector('body > section > article > p');
+// const par3 = document.querySelector('p#par.text');
+// const paragraphs = document.querySelectorAll('p');
 
-const elem1 = document.querySelector('.article > h1');
-const elem2 = document.querySelector('.article + p');
-// const elem3 = document.querySelector('main > div > img');
-const elem3 = document.querySelector('img[alt="GET THIS"]');
+// const elem1 = document.querySelector('.article > h1');
+// const elem2 = document.querySelector('.article + p');
+// // const elem3 = document.querySelector('main > div > img');
+// const elem3 = document.querySelector('img[alt="GET THIS"]');
+
+function subscribeHandler() {
+  alert('You are now subscribed !');
+
+  firstButton.removeEventListener('click', subscribeHandler);
+}
+
+firstButton.addEventListener('click', subscribeHandler);
