@@ -83,22 +83,22 @@ const rootDiv = document.getElementById('root');
 
 const btnHandler = (eventObj) => {
   // alert('You are now subscribed !');
+  // console.group();
   // console.log(eventObj);
-  console.group();
-  console.log('target: ');
-  // с кем произошло событие
-  console.log(eventObj.target);
-  console.log('currentTarget: ');
-  // на ком событие было повешено
+  // console.log('target: ');
+  // // с кем произошло событие
+  // console.log(eventObj.target);
+  // console.log('currentTarget: ');
+  // // на ком событие было повешено
   console.log(eventObj.currentTarget);
-  console.groupEnd();
+  // console.groupEnd();
 };
 
-// firstButton.addEventListener('click', btnHandler);
-// rootDiv.addEventListener('click', btnHandler);
-// document.body.addEventListener('click', btnHandler); // body
-// document.documentElement.addEventListener('click', btnHandler); // html
-// window.addEventListener('click', btnHandler);
+firstButton.addEventListener('click', btnHandler, { capture: true });
+rootDiv.addEventListener('click', btnHandler, { capture: true });
+document.body.addEventListener('click', btnHandler, { capture: true }); // body
+document.documentElement.addEventListener('click', btnHandler, true); // html
+window.addEventListener('click', btnHandler, true);
 
 // const clickEvent = new MouseEvent('click');
 
@@ -112,11 +112,11 @@ const btnHandler = (eventObj) => {
       тексте текущее количество кликов
 */
 
-let counter = 0;
+// let counter = 0;
 
-firstButton.addEventListener('click', (event) => {
-  // console.log(firstButton.textContent);
-  // console.log(event.target.textContent);
+// firstButton.addEventListener('click', (event) => {
+//   // console.log(firstButton.textContent);
+//   // console.log(event.target.textContent);
 
-  event.target.textContent = `Clicks: ${++counter}`;
-});
+//   event.target.textContent = `Clicks: ${++counter}`;
+// });
