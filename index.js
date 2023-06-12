@@ -108,10 +108,15 @@ const btnHandler = (eventObj) => {
   1. Создать кнопку. При нажатии на эту кнопку отображать
   в коносли / алерте её текстовое содержимое 
 
-
+  2.  Считатать количество нажатий по кнопке и отображать в её 
+      тексте текущее количество кликов
 */
+
+let counter = 0;
 
 firstButton.addEventListener('click', (event) => {
   // console.log(firstButton.textContent);
-  console.log(event.target.textContent);
+  // console.log(event.target.textContent);
+
+  event.target.textContent = `Clicks: ${++counter}`;
 });
