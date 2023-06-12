@@ -64,10 +64,26 @@ document.querySelectorAll
 // // const elem3 = document.querySelector('main > div > img');
 // const elem3 = document.querySelector('img[alt="GET THIS"]');
 
-function subscribeHandler() {
-  alert('You are now subscribed !');
+// function subscribeHandler() {
+//   alert('You are now subscribed !');
 
-  firstButton.removeEventListener('click', subscribeHandler);
-}
+//   firstButton.removeEventListener('click', subscribeHandler);
+// }
 
-firstButton.addEventListener('click', subscribeHandler);
+// firstButton.addEventListener('click', subscribeHandler);
+
+// firstButton.addEventListener('click', () => {
+//   alert('You are now subscribed !');
+
+//   firstButton.removeEventListener('click', () => {
+
+//   });
+// });
+
+firstButton.addEventListener(
+  'click',
+  () => {
+    alert('You are now subscribed !');
+  },
+  { once: true }
+);
