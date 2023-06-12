@@ -79,15 +79,27 @@ document.querySelectorAll
 
 //   });
 // });
+const rootDiv = document.getElementById('root');
 
-firstButton.addEventListener(
-  'click',
-  () => {
-    alert('You are now subscribed !');
-  },
-  { once: true }
-);
+const btnHandler = (eventObj) => {
+  // alert('You are now subscribed !');
+  // console.log(eventObj);
+  console.group();
+  console.log('target: ');
+  // с кем произошло событие
+  console.log(eventObj.target);
+  console.log('currentTarget: ');
+  // на ком событие было повешено
+  console.log(eventObj.currentTarget);
+  console.groupEnd();
+};
 
-const clickEvent = new MouseEvent('click');
+firstButton.addEventListener('click', btnHandler);
+rootDiv.addEventListener('click', btnHandler);
+document.body.addEventListener('click', btnHandler); // body
+document.documentElement.addEventListener('click', btnHandler); // html
+window.addEventListener('click', btnHandler);
 
-firstButton.dispatchEvent(clickEvent);
+// const clickEvent = new MouseEvent('click');
+
+// firstButton.dispatchEvent(clickEvent);
