@@ -151,15 +151,22 @@ const darkBtn = document.querySelector('#task > button');
 const lightBtn = document.querySelector('#task > button + button');
 const taskDiv = document.querySelector('#task');
 
+const taskDivTitle = document.createAttribute('title');
+taskDiv.setAttributeNode(taskDivTitle);
+
 darkBtn.addEventListener('click', () => {
   taskDiv.classList.add('dark');
   taskDiv.classList.remove('light');
-})
+  // taskDiv.setAttribute('title', `Current theme is dark`);
+  taskDivTitle.value = `Current theme is dark`;
+});
 
 lightBtn.addEventListener('click', () => {
   taskDiv.classList.remove('dark');
   taskDiv.classList.add('light');
-})
+  // taskDiv.setAttribute('title', `Current theme is light`);
+  taskDivTitle.value = `Current theme is light`;
+});
 
 // rootDiv.getAttribute('style') - получаем строковое значение атрибута
 // const rootStyle = rootDiv.getAttributeNode('style'); - получение узла атрибута
@@ -168,5 +175,5 @@ lightBtn.addEventListener('click', () => {
 // firstButton.setAttribute('style', 'padding: 20px'); - додабвление или изменение атрибута элемента
 
 const style = document.createAttribute('style');
-style.value = 'background-color: red;'
+style.value = 'background-color: red;';
 firstButton.setAttributeNode(style);
