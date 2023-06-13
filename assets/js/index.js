@@ -145,6 +145,18 @@ window.addEventListener('click', btnHandler, true);
   </div>
 
   также имеется css файл со стилями, в которых прописаны стили для темной и светлой темы. По нажатию на кнопку добавлять класс с соответствующей темой диву и убирать класс с противоположной темой
-
-
 */
+
+const darkBtn = document.querySelector('#task > button');
+const lightBtn = document.querySelector('#task > button + button');
+const taskDiv = document.querySelector('#task');
+
+darkBtn.addEventListener('click', () => {
+  taskDiv.classList.add('dark');
+  taskDiv.classList.remove('light');
+})
+
+lightBtn.addEventListener('click', () => {
+  taskDiv.classList.remove('dark');
+  taskDiv.classList.add('light');
+})
