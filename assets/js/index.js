@@ -177,8 +177,13 @@ function handleThemeSwitch(event) {
     target: {
       dataset: { theme },
     },
+    target,
   } = event;
   // const btnTheme = target.getAttribute('theme');
+
+  if (target.tagName !== 'BUTTON') {
+    return;
+  }
 
   // taskDiv.className = btnTheme;
   taskDiv.classList.remove(...themes);
@@ -186,11 +191,11 @@ function handleThemeSwitch(event) {
   taskDivTitle.value = `Current theme is ${theme}`;
 }
 
-const buttons = document.getElementsByTagName('button');
-
-for (const btn of buttons) {
-  btn.addEventListener('click', handleThemeSwitch);
-}
+// const buttons = document.getElementsByTagName('button');
+taskDiv.addEventListener('click', handleThemeSwitch);
+// for (const btn of buttons) {
+//   btn.addEventListener('click', handleThemeSwitch);
+// }
 
 // rootDiv.getAttribute('style') - получаем строковое значение атрибута
 // const rootStyle = rootDiv.getAttributeNode('style'); - получение узла атрибута
