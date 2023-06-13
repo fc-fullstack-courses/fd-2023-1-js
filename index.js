@@ -120,3 +120,18 @@ window.addEventListener('click', btnHandler, true);
 
 //   event.target.textContent = `Clicks: ${++counter}`;
 // });
+
+// rootDiv.children - дочерние элементы дива
+// rootDiv.attributes - все атрибуты елемента
+
+// firstButton.className - строка с классами элемента
+// firstButton.className = 'dom-class' - полная перезапись классов элемента
+
+// firstButton.classList - псевдомассив с классами и методами изменения классов
+
+// firstButton.classList.add('new1', 'new2', 'new3'); - добавляет строчки классов к уже существующим
+// firstButton.classList.remove('new1', 'new2', 'new3'); - убирает строчки классов из элемента
+// firstButton.classList.toggle('test') - "переключает" один класс в элементе
+
+// firstButton.id - получение или изменение айдишника элемента
+// firstButton.innerHTML - позвоялет просмтаривать из изменять верстку внутри вашего элемента. ПОЛЬЗОВАТЬСЯ ОСТОРОЖНО!
