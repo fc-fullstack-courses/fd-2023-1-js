@@ -154,19 +154,37 @@ const taskDiv = document.querySelector('#task');
 const taskDivTitle = document.createAttribute('title');
 taskDiv.setAttributeNode(taskDivTitle);
 
-darkBtn.addEventListener('click', () => {
-  taskDiv.classList.add('dark');
-  taskDiv.classList.remove('light');
-  // taskDiv.setAttribute('title', `Current theme is dark`);
-  taskDivTitle.value = `Current theme is dark`;
-});
+// darkBtn.addEventListener('click', () => {
+//   taskDiv.classList.add('dark');
+//   taskDiv.classList.remove('light');
+//   // taskDiv.setAttribute('title', `Current theme is dark`);
+//   taskDivTitle.value = `Current theme is dark`;
+// });
 
-lightBtn.addEventListener('click', () => {
-  taskDiv.classList.remove('dark');
-  taskDiv.classList.add('light');
-  // taskDiv.setAttribute('title', `Current theme is light`);
-  taskDivTitle.value = `Current theme is light`;
-});
+// lightBtn.addEventListener('click', () => {
+//   taskDiv.classList.remove('dark');
+//   taskDiv.classList.add('light');
+//   // taskDiv.setAttribute('title', `Current theme is light`);
+//   taskDivTitle.value = `Current theme is light`;
+// });
+
+const themes = ['light', 'dark'];
+
+function handleThemeSwitch(event) {
+  const { target } = event;
+  const btnTheme = target.getAttribute('theme');
+
+  // taskDiv.className = btnTheme;
+  taskDiv.classList.remove(...themes);
+  taskDiv.classList.add(btnTheme);
+  taskDivTitle.value = `Current theme is ${btnTheme}`;
+}
+
+const buttons = document.getElementsByTagName('button');
+
+for (const btn of buttons) {
+  btn.addEventListener('click', handleThemeSwitch);
+}
 
 // rootDiv.getAttribute('style') - получаем строковое значение атрибута
 // const rootStyle = rootDiv.getAttributeNode('style'); - получение узла атрибута
