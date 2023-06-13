@@ -170,14 +170,20 @@ taskDiv.setAttributeNode(taskDivTitle);
 
 const themes = ['light', 'dark'];
 
+console.log(taskDiv.dataset);
+
 function handleThemeSwitch(event) {
-  const { target } = event;
-  const btnTheme = target.getAttribute('theme');
+  const {
+    target: {
+      dataset: { theme },
+    },
+  } = event;
+  // const btnTheme = target.getAttribute('theme');
 
   // taskDiv.className = btnTheme;
   taskDiv.classList.remove(...themes);
-  taskDiv.classList.add(btnTheme);
-  taskDivTitle.value = `Current theme is ${btnTheme}`;
+  taskDiv.classList.add(theme);
+  taskDivTitle.value = `Current theme is ${theme}`;
 }
 
 const buttons = document.getElementsByTagName('button');
