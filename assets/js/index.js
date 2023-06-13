@@ -94,11 +94,11 @@ const btnHandler = (eventObj) => {
   // console.groupEnd();
 };
 
-firstButton.addEventListener('click', btnHandler, { capture: true });
-rootDiv.addEventListener('click', btnHandler, { capture: true });
-document.body.addEventListener('click', btnHandler, { capture: true }); // body
-document.documentElement.addEventListener('click', btnHandler, true); // html
-window.addEventListener('click', btnHandler, true);
+// firstButton.addEventListener('click', btnHandler, { capture: true });
+// rootDiv.addEventListener('click', btnHandler, { capture: true });
+// document.body.addEventListener('click', btnHandler, { capture: true }); // body
+// document.documentElement.addEventListener('click', btnHandler, true); // html
+// window.addEventListener('click', btnHandler, true);
 
 // const clickEvent = new MouseEvent('click');
 
@@ -160,3 +160,13 @@ lightBtn.addEventListener('click', () => {
   taskDiv.classList.remove('dark');
   taskDiv.classList.add('light');
 })
+
+// rootDiv.getAttribute('style') - получаем строковое значение атрибута
+// const rootStyle = rootDiv.getAttributeNode('style'); - получение узла атрибута
+// rootStyle.value = 'new value' - измение значения атрибута
+
+// firstButton.setAttribute('style', 'padding: 20px'); - додабвление или изменение атрибута элемента
+
+const style = document.createAttribute('style');
+style.value = 'background-color: red;'
+firstButton.setAttributeNode(style);
