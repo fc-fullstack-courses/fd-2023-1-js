@@ -244,3 +244,34 @@ form.addEventListener('submit', (event) => {
 // window.addEventListener('click', (e)=> {
 //   console.log('clicked on window');
 // })
+
+/*
+  Есть форма с инпутом и кнопкой. Также есть массив.
+  при каждой отправки формы записывать значение в массив.
+  * ложить задачу в массив только если она валидная (не начинается с пробела)
+  * если задача нормальная то после добавления в массив сбросить форму
+*/
+
+const todoForm = document.querySelector('#todoForm');
+const todoArray = [];
+
+todoForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const {
+    target: {
+      elements: {
+        text: { value },
+      },
+    },
+  } = event;
+
+  if (value[0] === ' ' || !value) {
+    return;
+  }
+
+  todoArray.push(event.target.elements.text.value);
+
+  // event.target.elements.text.value = '';
+  event.target.reset();
+});
