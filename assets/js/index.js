@@ -295,3 +295,16 @@ document.body.append(element1);
   а и создавать новый элемент лишки, добавить ему текст
   и отобразить его на странице
 */
+
+element1.remove();
+
+/*
+  Создать самоудаляющуюся кнопку
+*/
+
+const btn = document.getElementById('btn');
+
+btn.addEventListener('click', (e) => {
+  // btn.remove();
+  e.target.remove();
+});
