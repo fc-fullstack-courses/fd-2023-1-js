@@ -170,7 +170,7 @@ taskDiv.setAttributeNode(taskDivTitle);
 
 const themes = ['light', 'dark'];
 
-console.log(taskDiv.dataset);
+// console.log(taskDiv.dataset);
 
 function handleThemeSwitch(event) {
   const {
@@ -206,3 +206,23 @@ taskDiv.addEventListener('click', handleThemeSwitch);
 const style = document.createAttribute('style');
 style.value = 'background-color: red;';
 firstButton.setAttributeNode(style);
+
+const form = document.querySelector('#form');
+
+form.addEventListener('submit', (event) => {
+  console.log(event);
+  event.preventDefault();
+});
+
+// document.body.addEventListener('click', (e)=> {
+//   console.log('clicked on body');
+// })
+
+// document.documentElement.addEventListener('click', (e)=> {
+//   e.stopPropagation();
+//   console.log('clicked on HTML');
+// })
+
+// window.addEventListener('click', (e)=> {
+//   console.log('clicked on window');
+// })
