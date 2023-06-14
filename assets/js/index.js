@@ -275,3 +275,11 @@ todoForm.addEventListener('submit', (event) => {
   // event.target.elements.text.value = '';
   event.target.reset();
 });
+
+const element1 = document.createElement('div');
+
+element1.textContent = 'Created from DOM';
+
+// document.body.appendChild(element1);
+document.body.append(element1);
+// document.body.append('test string', 'asffafa','asdsafs')
