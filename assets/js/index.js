@@ -283,3 +283,10 @@ element1.textContent = 'Created from DOM';
 // document.body.appendChild(element1);
 document.body.append(element1);
 // document.body.append('test string', 'asffafa','asdsafs')
+
+/*
+  добавить элемент списка в HTML файл.
+  при отправке формы не только сохранять текст в массив,
+  а и создавать новый элемент лишки, добавить ему текст
+  и отобразить его на странице
+*/
