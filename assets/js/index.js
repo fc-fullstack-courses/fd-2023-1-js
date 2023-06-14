@@ -253,6 +253,7 @@ form.addEventListener('submit', (event) => {
 */
 
 const todoForm = document.querySelector('#todoForm');
+const root = document.querySelector('#root');
 const todoArray = [];
 
 todoForm.addEventListener('submit', (event) => {
@@ -271,6 +272,10 @@ todoForm.addEventListener('submit', (event) => {
   }
 
   todoArray.push(event.target.elements.text.value);
+
+  const li = document.createElement('li');
+  li.textContent = value;
+  root.append(li);
 
   // event.target.elements.text.value = '';
   event.target.reset();
