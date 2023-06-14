@@ -209,9 +209,27 @@ firstButton.setAttributeNode(style);
 
 const form = document.querySelector('#form');
 
+function login(username, password) {
+  if (!username || !password) {
+    throw new Error('Invalid data');
+  }
+
+  alert(`You are logged in with username ${username} and password ${password}`);
+}
+
 form.addEventListener('submit', (event) => {
-  console.log(event);
   event.preventDefault();
+  const { target: loginForm } = event;
+  // console.dir(loginForm);
+
+  const {
+    elements: {
+      login: { value: loginString },
+      password: { value: passwordString },
+    },
+  } = loginForm;
+
+  login(loginString, passwordString);
 });
 
 // document.body.addEventListener('click', (e)=> {
