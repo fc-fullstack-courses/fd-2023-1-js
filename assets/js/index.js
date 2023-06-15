@@ -12,7 +12,10 @@ const ActorsCards = responseData.map((actor) => createActorCard(actor));
 root.append(...ActorsCards);
 
 function createActorCard(actor) {
-  const fullName = `${actor.firstName} ${actor.lastName}`;
+  const { id, firstName, lastName, profilePicture, aboutMe } = actor;
+
+  const fullName =
+    firstName || lastName ? `${firstName} ${lastName}`.trim() : 'Unknown Actor';
 
   const card = document.createElement('article');
   card.classList.add('cardContainer');
@@ -29,7 +32,7 @@ function createActorCard(actor) {
   const img = document.createElement('img');
   img.classList.add('img');
   // img.setAttribute('src')
-  img.src = actor.profilePicture;
+  img.src = profilePicture;
   img.alt = fullName;
 
   const actorName = document.createElement('h1');
@@ -38,9 +41,7 @@ function createActorCard(actor) {
 
   const cardText = document.createElement('p');
   cardText.classList.add('cardText');
-  cardText.textContent = actor.aboutMe
-    ? actor.aboutMe
-    : 'Actor didn`t write about self';
+  cardText.textContent = aboutMe ? aboutMe : 'Actor didn`t write about self';
 
   imgWrapper.append(img);
   cardInfo.append(imgWrapper, actorName, cardText);
