@@ -254,7 +254,7 @@ form.addEventListener('submit', (event) => {
 
 const todoForm = document.querySelector('#todoForm');
 const root = document.querySelector('#root');
-const todoArray = [];
+let todoArray = [];
 
 // todoForm.addEventListener('submit', (event) => {
 //   event.preventDefault();
@@ -314,9 +314,15 @@ btn.addEventListener('click', (e) => {
   кнопку. При нажатии на кнопку удалять лишку с задачей
 */
 
+let id = 0;
+
 const deleteBtnHandler = (e) => {
-  const { target } = e;
-  target.parentElement.remove();
+  const {
+    target: { parentElement: li },
+  } = e;
+  todoArray = todoArray.filter((todo) => todo.id !== +li.dataset.id);
+
+  li.remove();
 };
 
 todoForm.addEventListener('submit', (event) => {
@@ -325,21 +331,31 @@ todoForm.addEventListener('submit', (event) => {
   const {
     target: {
       elements: {
-        text: { value },
+        text: { value: text },
       },
     },
   } = event;
 
-  if (value[0] === ' ' || !value) {
+  if (text[0] === ' ' || !text) {
     return;
   }
 
-  todoArray.push(event.target.elements.text.value);
+  const newTodo = {
+    text,
+    id,
+  };
+
+  todoArray.push(newTodo);
 
   const li = document.createElement('li');
   const buttonL = document.createElement('button');
   buttonL.textContent = 'Del';
-  li.textContent = value;
+  li.textContent = text;
+
+  li.setAttribute('data-id', id);
+
+  id++;
+
   root.append(li);
   li.append(buttonL);
 
