@@ -256,30 +256,30 @@ const todoForm = document.querySelector('#todoForm');
 const root = document.querySelector('#root');
 const todoArray = [];
 
-todoForm.addEventListener('submit', (event) => {
-  event.preventDefault();
+// todoForm.addEventListener('submit', (event) => {
+//   event.preventDefault();
 
-  const {
-    target: {
-      elements: {
-        text: { value },
-      },
-    },
-  } = event;
+//   const {
+//     target: {
+//       elements: {
+//         text: { value },
+//       },
+//     },
+//   } = event;
 
-  if (value[0] === ' ' || !value) {
-    return;
-  }
+//   if (value[0] === ' ' || !value) {
+//     return;
+//   }
 
-  todoArray.push(event.target.elements.text.value);
+//   todoArray.push(event.target.elements.text.value);
 
-  const li = document.createElement('li');
-  li.textContent = value;
-  root.append(li);
+//   const li = document.createElement('li');
+//   li.textContent = value;
+//   root.append(li);
 
-  // event.target.elements.text.value = '';
-  event.target.reset();
-});
+//   // event.target.elements.text.value = '';
+//   event.target.reset();
+// });
 
 const element1 = document.createElement('div');
 
@@ -307,4 +307,47 @@ const btn = document.getElementById('btn');
 btn.addEventListener('click', (e) => {
   // btn.remove();
   e.target.remove();
+});
+
+/*
+  При создании лишки с задачей в ней также размещать
+  кнопку. При нажатии на кнопку удалять лишку с задачей
+*/
+
+const deleteBtnHandler = (e) => {
+  const { target } = e;
+  target.parentElement.remove();
+};
+
+todoForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const {
+    target: {
+      elements: {
+        text: { value },
+      },
+    },
+  } = event;
+
+  if (value[0] === ' ' || !value) {
+    return;
+  }
+
+  todoArray.push(event.target.elements.text.value);
+
+  const li = document.createElement('li');
+  const buttonL = document.createElement('button');
+  buttonL.textContent = 'Del';
+  li.textContent = value;
+  root.append(li);
+  li.append(buttonL);
+
+  // buttonL.addEventListener("click", () => {
+  //   li.remove();
+  // });
+
+  buttonL.addEventListener('click', deleteBtnHandler);
+
+  event.target.reset();
 });
