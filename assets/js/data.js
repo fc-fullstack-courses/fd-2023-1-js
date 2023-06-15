@@ -3,6 +3,7 @@ const responseData = [
     id: 1,
     firstName: 'Jason',
     lastName: 'Statham',
+    aboutMe: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsam quisquam placeat quos vero eaque nesciunt, esse ea recusandae dolorem minus odit ad ex vitae ratione praesentium! Veritatis omnis, delectus voluptatem aspernatur inventore incidunt debitis doloribus, neque quo vero similique.',
     profilePicture:
       'https://www.themoviedb.org/t/p/w500/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg',
     contacts: [
