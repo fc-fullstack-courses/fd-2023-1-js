@@ -17,12 +17,6 @@ function createActorCard(actor) {
   const fullName =
     firstName || lastName ? `${firstName} ${lastName}`.trim() : 'Unknown Actor';
 
-  const card = document.createElement('article');
-  card.classList.add('cardContainer');
-
-  const cardHeader = document.createElement('div');
-  cardHeader.classList.add('cardHeader');
-
   const cardInfo = document.createElement('div');
   cardInfo.classList.add('cardInfo');
 
@@ -31,7 +25,6 @@ function createActorCard(actor) {
 
   const img = document.createElement('img');
   img.classList.add('img');
-  // img.setAttribute('src')
   img.src = profilePicture;
   img.alt = fullName;
   img.addEventListener('error', handleImageError);
@@ -40,9 +33,8 @@ function createActorCard(actor) {
   initials.classList.add('initials');
   initials.textContent = generateInitials(fullName);
 
-  const actorName = document.createElement('h1');
-  actorName.classList.add('actorName');
-  actorName.textContent = fullName;
+
+  const actorName = createElement('h1', {classNames: ['actorName']}, fullName);
 
   const cardText = document.createElement('p');
   cardText.classList.add('cardText');
@@ -50,6 +42,15 @@ function createActorCard(actor) {
 
   imgWrapper.append(img, initials);
   cardInfo.append(imgWrapper, actorName, cardText);
-  card.append(cardHeader, cardInfo);
+
+  const cardHeader = createElement('div', {classNames: ['cardHeader']});
+
+  const card = createElement(
+    'article',
+    { classNames: ['cardContainer'] },
+    cardHeader,
+    cardInfo
+  );
+
   return card;
 }
