@@ -34,6 +34,11 @@ function createActorCard(actor) {
   // img.setAttribute('src')
   img.src = profilePicture;
   img.alt = fullName;
+  img.addEventListener('error', handleImageError);
+
+  const initials = document.createElement('p');
+  initials.classList.add('initials');
+  initials.textContent = generateInitials(fullName);
 
   const actorName = document.createElement('h1');
   actorName.classList.add('actorName');
@@ -43,7 +48,7 @@ function createActorCard(actor) {
   cardText.classList.add('cardText');
   cardText.textContent = aboutMe ? aboutMe : 'Actor didn`t write about self';
 
-  imgWrapper.append(img);
+  imgWrapper.append(img, initials);
   cardInfo.append(imgWrapper, actorName, cardText);
   card.append(cardHeader, cardInfo);
   return card;
