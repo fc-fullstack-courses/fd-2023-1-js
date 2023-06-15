@@ -20,30 +20,22 @@ function createActorCard(actor) {
   const cardInfo = document.createElement('div');
   cardInfo.classList.add('cardInfo');
 
-  const imgWrapper = document.createElement('div');
-  imgWrapper.classList.add('imgWrapper');
+  const imgData = { profilePicture, fullName };
+  const imgWrapper = createImage(imgData);
 
-  const img = document.createElement('img');
-  img.classList.add('img');
-  img.src = profilePicture;
-  img.alt = fullName;
-  img.addEventListener('error', handleImageError);
-
-  const initials = document.createElement('p');
-  initials.classList.add('initials');
-  initials.textContent = generateInitials(fullName);
-
-
-  const actorName = createElement('h1', {classNames: ['actorName']}, fullName);
+  const actorName = createElement(
+    'h1',
+    { classNames: ['actorName'] },
+    fullName
+  );
 
   const cardText = document.createElement('p');
   cardText.classList.add('cardText');
   cardText.textContent = aboutMe ? aboutMe : 'Actor didn`t write about self';
 
-  imgWrapper.append(img, initials);
   cardInfo.append(imgWrapper, actorName, cardText);
 
-  const cardHeader = createElement('div', {classNames: ['cardHeader']});
+  const cardHeader = createElement('div', { classNames: ['cardHeader'] });
 
   const card = createElement(
     'article',
@@ -53,4 +45,41 @@ function createActorCard(actor) {
   );
 
   return card;
+}
+
+function createImage({ profilePicture, fullName }) {
+  // const imgWrapper = document.createElement('div');
+  // imgWrapper.classList.add('imgWrapper');
+
+  // const img = document.createElement('img');
+  // img.classList.add('img');
+  // img.src = profilePicture;
+  // img.alt = fullName;
+  // img.addEventListener('error', handleImageError);
+
+  // const initials = document.createElement('p');
+  // initials.classList.add('initials');
+  // initials.textContent = generateInitials(fullName);
+
+  // imgWrapper.append(img, initials);
+
+  const img = createElement('img', { classNames: ['img'] });
+  img.src = profilePicture;
+  img.alt = fullName;
+  img.addEventListener('error', handleImageError);
+
+  const initials = createElement(
+    'p',
+    { classNames: ['initials'] },
+    generateInitials(fullName)
+  );
+
+  const imgWrapper = createElement(
+    'div',
+    { classNames: ['imgWrapper'] },
+    img,
+    initials
+  );
+
+  return imgWrapper;
 }
