@@ -62,6 +62,27 @@ function countTimeout() {
   console.log(i++);
 
   if (i <= 10) {
-    setTimeout( countTimeout , 100);
-  } 
+    setTimeout(countTimeout, 100);
+  }
 }
+
+const user1 = {
+  id: 1,
+  firstName: 'User',
+  lastName: 'Userenko',
+  isMale: true,
+  getFullName: function() {
+    return 'test';
+  },
+  test: null,
+  test2: undefined,
+  test3: Symbol(),
+  arr: [1,2,3]
+};
+
+// сериализация данных
+const serializedUser = JSON.stringify(user1);
+
+// десериализация данных
+const reconstructedUser = JSON.parse(serializedUser);
+
