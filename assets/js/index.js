@@ -83,3 +83,12 @@ function createImage({ profilePicture, fullName }) {
 
   return imgWrapper;
 }
+
+
+/*
+  Реализовать отрисовку соц сетей актеров
+  обьект URL позволит в свойстве hostname узнать какая именно соц сеть в данной ссылке
+
+  соцсеть1 -> twitterpic.jpg
+  соцсеть2 -> fbpic.jpg
+*/
