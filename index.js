@@ -17,8 +17,22 @@ const btn = document.getElementById('btn');
 // });
 
 
-console.log('first');
+// console.log('first');
 
-setTimeout(()=> {console.log('second')}, 0);
+// setTimeout(()=> {console.log('second')}, 0);
 
-console.log('third');
+// console.log('third');
+
+// const timeoutId = setTimeout(function callback () {
+//   console.log('callback');
+// }, 2000);
+
+// setTimeout(function callback () {
+//   clearTimeout(timeoutId);
+// }, 2000);
+
+const intervalId = setInterval( () => {
+  console.log('interval');
+}, 2000);
+
+clearInterval(intervalId);
