@@ -16,7 +16,6 @@ const btn = document.getElementById('btn');
 
 // });
 
-
 // console.log('first');
 
 // setTimeout(()=> {console.log('second')}, 0);
@@ -31,8 +30,38 @@ const btn = document.getElementById('btn');
 //   clearTimeout(timeoutId);
 // }, 2000);
 
-const intervalId = setInterval( () => {
-  console.log('interval');
-}, 2000);
+// const intervalId = setInterval( () => {
+//   console.log('interval');
+// }, 2000);
 
-clearInterval(intervalId);
+// clearInterval(intervalId);
+
+/*
+  Создать функцию, которая будет выводить в консоль числа от 1 до 10 с интервалом в 100 мс.
+  Можно решить через:
+
+  setInterval - if, clearInterval
+
+  setTimeout - рекурсия с ифом
+*/
+
+function countInterval() {
+  let i = 1;
+
+  const intervalId = setInterval(() => {
+    console.log(i++);
+    if (i > 10) {
+      clearInterval(intervalId);
+    }
+  }, 100);
+}
+
+let i = 1;
+
+function countTimeout() {
+  console.log(i++);
+
+  if (i <= 10) {
+    setTimeout( countTimeout , 100);
+  } 
+}
