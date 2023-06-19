@@ -121,20 +121,40 @@ let test2 = () => {};
 console.log(1);
 
 const promise = new Promise(function executor(resolve, reject) {
-
   console.log(2);
-  
+
   // 1 успешное завершение
-  setTimeout(() => {
-    resolve([
-      { id: 1, firstName: 'User', lastName: 'Userenko', isMale: true },
-      { id: 2, firstName: 'User 2', lastName: 'Userenko', isMale: true },
-      { id: 3, firstName: 'User 3', lastName: 'Userenko', isMale: true },
-    ]);
-  }, 2000);
+  // setTimeout(() => {
+  //   resolve([
+  //     { id: 1, firstName: 'User', lastName: 'Userenko', isMale: true },
+  //     { id: 2, firstName: 'User 2', lastName: 'Userenko', isMale: true },
+  //     { id: 3, firstName: 'User 3', lastName: 'Userenko', isMale: true },
+  //   ]);
+  // }, 5000);
 
   // 2 отклонение промиса
-  reject(new Error('Users not found'));
+  setTimeout(() => {
+    reject(new Error('Users not found'));
+  }, 2000);
 });
 
 console.log(3);
+
+promise.then(
+  function onResolved(promiseResult) {
+    // resolved callback
+    console.log('then');
+    console.log(promiseResult);
+  },
+  function onRejected(error) {
+    // rejected callback
+    console.log('then second param');
+    console.dir(error);
+  }
+);
+
+// try {
+//   // dangerous code
+// } catch(error) {
+//   // handle error
+// }
