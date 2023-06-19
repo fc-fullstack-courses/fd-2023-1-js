@@ -86,30 +86,55 @@ const serializedUser = JSON.stringify(user1);
 // десериализация данных
 const reconstructedUser = JSON.parse(serializedUser);
 
-const func = () => {
-  console.log('something');
-};
+// const func = () => {
+//   console.log('something');
+// };
 
-setTimeout(func, 1000);
+// setTimeout(func, 1000);
 
-setTimeout(() => {
-  // 1
+// setTimeout(() => {
+//   // 1
+//   setTimeout(() => {
+//     // 2
+//     setTimeout(() => {
+//       //3
+//       setTimeout(() => {
+//         //4
+//         setTimeout(() => {
+//           //5
+//           setTimeout(() => {
+
+//           }, 2000);
+//           setTimeout(() => {
+
+//           }, 2000);
+//         }, 1000);
+//       }, 1000);
+//     }, 1000);
+//   }, 1000);
+// }, 1000);
+
+function test() {}
+let test3 = 1235;
+let test2 = () => {};
+
+console.log(1);
+
+const promise = new Promise(function executor(resolve, reject) {
+
+  console.log(2);
+  
+  // 1 успешное завершение
   setTimeout(() => {
-    // 2
-    setTimeout(() => {
-      //3
-      setTimeout(() => {
-        //4
-        setTimeout(() => {
-          //5
-          setTimeout(() => {
+    resolve([
+      { id: 1, firstName: 'User', lastName: 'Userenko', isMale: true },
+      { id: 2, firstName: 'User 2', lastName: 'Userenko', isMale: true },
+      { id: 3, firstName: 'User 3', lastName: 'Userenko', isMale: true },
+    ]);
+  }, 2000);
 
-          }, 2000);
-          setTimeout(() => {
-            
-          }, 2000);
-        }, 1000);
-      }, 1000);
-    }, 1000);
-  }, 1000);
-}, 1000);
+  // 2 отклонение промиса
+  reject(new Error('Users not found'));
+});
+
+console.log(3);
