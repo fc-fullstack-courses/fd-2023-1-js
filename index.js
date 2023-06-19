@@ -71,13 +71,13 @@ const user1 = {
   firstName: 'User',
   lastName: 'Userenko',
   isMale: true,
-  getFullName: function() {
+  getFullName: function () {
     return 'test';
   },
   test: null,
   test2: undefined,
   test3: Symbol(),
-  arr: [1,2,3]
+  arr: [1, 2, 3],
 };
 
 // сериализация данных
@@ -86,3 +86,30 @@ const serializedUser = JSON.stringify(user1);
 // десериализация данных
 const reconstructedUser = JSON.parse(serializedUser);
 
+const func = () => {
+  console.log('something');
+};
+
+setTimeout(func, 1000);
+
+setTimeout(() => {
+  // 1
+  setTimeout(() => {
+    // 2
+    setTimeout(() => {
+      //3
+      setTimeout(() => {
+        //4
+        setTimeout(() => {
+          //5
+          setTimeout(() => {
+
+          }, 2000);
+          setTimeout(() => {
+            
+          }, 2000);
+        }, 1000);
+      }, 1000);
+    }, 1000);
+  }, 1000);
+}, 1000);
