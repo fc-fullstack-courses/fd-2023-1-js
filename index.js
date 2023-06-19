@@ -189,7 +189,12 @@ fetch('./user.jsn')
   })
   .then(() => {
     console.log('then 3');
+    // console.log('last action');
   })
   .catch((err) => {
     console.log(err);
+    // console.log('last action');
+  })
+  .finally(() => {
+    console.log('last action');
   });
