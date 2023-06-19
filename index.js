@@ -177,10 +177,19 @@ let test2 = () => {};
 //   console.log(data);
 // });
 
-fetch('./user.json')
+fetch('./user.jsn')
   .then((response) => {
     return response.json();
   })
   .then((data) => {
+    // if (data.length < 10) {
+    //   throw new Error('test');
+    // }
     console.log(data);
+  })
+  .then(() => {
+    console.log('then 3');
+  })
+  .catch((err) => {
+    console.log(err);
   });
