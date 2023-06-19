@@ -118,43 +118,69 @@ function test() {}
 let test3 = 1235;
 let test2 = () => {};
 
-console.log(1);
+// console.log(1);
 
-const promise = new Promise(function executor(resolve, reject) {
-  console.log(2);
+// const promise = new Promise(function executor(resolve, reject) {
+//   console.log(2);
 
-  // 1 успешное завершение
-  // setTimeout(() => {
-  //   resolve([
-  //     { id: 1, firstName: 'User', lastName: 'Userenko', isMale: true },
-  //     { id: 2, firstName: 'User 2', lastName: 'Userenko', isMale: true },
-  //     { id: 3, firstName: 'User 3', lastName: 'Userenko', isMale: true },
-  //   ]);
-  // }, 5000);
+//   // 1 успешное завершение
+//   // setTimeout(() => {
+//   //   resolve([
+//   //     { id: 1, firstName: 'User', lastName: 'Userenko', isMale: true },
+//   //     { id: 2, firstName: 'User 2', lastName: 'Userenko', isMale: true },
+//   //     { id: 3, firstName: 'User 3', lastName: 'Userenko', isMale: true },
+//   //   ]);
+//   // }, 5000);
 
-  // 2 отклонение промиса
-  setTimeout(() => {
-    reject(new Error('Users not found'));
-  }, 2000);
-});
+//   // 2 отклонение промиса
+//   setTimeout(() => {
+//     reject(new Error('Users not found'));
+//   }, 2000);
+// });
 
-console.log(3);
+// console.log(3);
 
-promise.then(
-  function onResolved(promiseResult) {
-    // resolved callback
-    console.log('then');
-    console.log(promiseResult);
-  },
-  function onRejected(error) {
-    // rejected callback
-    console.log('then second param');
-    console.dir(error);
-  }
-);
+// promise.then(
+//   function onResolved(promiseResult) {
+//     // resolved callback
+//     console.log('then');
+//     console.log(promiseResult);
+//   },
+//   function onRejected(error) {
+//     // rejected callback
+//     console.log('then second param');
+//     console.dir(error);
+//   }
+// );
 
 // try {
 //   // dangerous code
 // } catch(error) {
 //   // handle error
 // }
+
+// const fetchPromise = fetch('./user.json');
+
+// const thenPromise1 = fetchPromise.then((response) => {
+//   // console.log(response);
+//   const jsonPromise = response.json();
+
+//   // jsonPromise.then((data) => {
+//   //   // получанные десериализованные данные
+//   //   // console.log(data);
+//   // });
+
+//   return jsonPromise;
+// });
+
+// const thenPromise2 = thenPromise1.then((data) => {
+//   console.log(data);
+// });
+
+fetch('./user.json')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  });
